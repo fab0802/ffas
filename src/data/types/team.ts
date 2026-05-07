@@ -1,3 +1,5 @@
+import { TrainingSlot } from "./trainingSlot";
+
 export type Team = {
   slug: string;
   name: string;
@@ -5,7 +7,7 @@ export type Team = {
   ageRange: string;
   liga: string;
   description: string;
-  trainings: string[];
+  trainings: TrainingSlot[];
 };
 
 // Trainer werden über Assignements zugewiesen

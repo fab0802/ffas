@@ -9,7 +9,22 @@ export const teams: Team[] = [
     liga: "3. Liga",
     description:
       "Unsere Vorzeige-Elf. Trainiert dreimal die Woche, spielt für den Aufstieg.",
-    trainings: [],
+    trainings: [
+      {
+        day: "Dienstag",
+        startTime: "19:45",
+        endTime: "21:30",
+        locationSlug: "suerenloh-uitikon",
+        fieldSlug: "2",
+      },
+      {
+        day: "Donnerstag",
+        startTime: "19:45",
+        endTime: "21:30",
+        locationSlug: "moos-wettswil",
+        fieldSlug: "2",
+      },
+    ],
   },
   {
     slug: "frauen-2",
@@ -19,6 +34,21 @@ export const teams: Team[] = [
     liga: "4. Liga",
     description:
       "Spass am Spiel, Anspruch im Training. Quereinsteigerinnen jederzeit willkommen.",
-    trainings: [],
+    trainings: [
+      {
+        day: "Dienstag",
+        startTime: "19:45",
+        endTime: "21:30",
+        locationSlug: "suerenloh-uitikon",
+        fieldSlug: "2",
+      },
+      {
+        day: "Donnerstag",
+        startTime: "19:45",
+        endTime: "21:30",
+        locationSlug: "moos-wettswil",
+        fieldSlug: "2",
+      },
+    ],
   },
 ];
