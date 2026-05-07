@@ -9,7 +9,6 @@ export const teams: Team[] = [
     liga: "3. Liga",
     description:
       "Unsere Vorzeige-Elf. Trainiert dreimal die Woche, spielt für den Aufstieg.",
-    trainerSlugs: [],
     trainings: [],
   },
   {
@@ -20,7 +19,6 @@ export const teams: Team[] = [
     liga: "4. Liga",
     description:
       "Spass am Spiel, Anspruch im Training. Quereinsteigerinnen jederzeit willkommen.",
-    trainerSlugs: [],
     trainings: [],
   },
 ];
