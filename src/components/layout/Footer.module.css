@@ -1,0 +1,133 @@
+.footer {
+  padding: 100px 40px 40px;
+  background: var(--navy-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── 4-Spalten-Grid: Brand-Block links breiter als die Link-Spalten ───── */
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 80px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(250, 246, 238, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── Brand-Spalte (Logo, Vereinsname, Adresse) ────────────────────────── */
+.brand .logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 26px;
+}
+
+.brand h4 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.brand p {
+  font-size: 14px;
+  color: rgba(250, 246, 238, 0.55);
+  line-height: 1.7;
+  max-width: 320px;
+}
+
+/* ─── Link-Spalten (Verein, Mitmachen, Kontakt) ────────────────────────── */
+.col h5 {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 24px;
+}
+
+.col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.col li {
+  margin-bottom: 12px;
+}
+
+.col a {
+  color: rgba(250, 246, 238, 0.7);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.col a:hover {
+  color: var(--pink);
+}
+
+/* ─── Untere Zeile: Copyright + Impressum/Datenschutz ──────────────────── */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 238, 0.4);
+  position: relative;
+  z-index: 2;
+}
+
+.bottom a {
+  color: rgba(250, 246, 238, 0.4);
+  text-decoration: none;
+}
+
+.bottom a:hover {
+  color: var(--pink);
+}
+
+/* ─── Riesige, blass-pinke Jahreszahl im Hintergrund ───────────────────── */
+.big {
+  position: absolute;
+  left: 40px;
+  bottom: -30px;
+  font-family: var(--serif);
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(120px, 18vw, 280px);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: rgba(255, 102, 195, 0.06);
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+/* ─── Mobile ───────────────────────────────────────────────────────────── */
+@media (max-width: 880px) {
+  .footer {
+    padding: 60px 22px 30px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+    padding-bottom: 40px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
