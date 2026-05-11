@@ -1,9 +1,11 @@
+import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import Button from "@/components/ui/Button";
 
 export default function Home() {
   return (
     <>
+      <Nav />
       <main style={{ padding: "100px 40px" }}>
         <h1
           style={{
