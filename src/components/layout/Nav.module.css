@@ -31,7 +31,7 @@
   color: var(--cream);
   text-decoration: none;
   transition: color 0.3s;
-  border: 0.5px solid var(--pink);
+  border: 1px dotted var(--pink);
   border-radius: 50%;
   width: 3.4rem;
   height: 3.4rem;
@@ -40,7 +40,7 @@
 }
 
 .logo:hover {
-  border: 1px dotted var(--pink);
+  border: 1px solid var(--pink);
 }
 
 /* ─── Link-Liste rechts ──────────────────────────────────────────────── */
