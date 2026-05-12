@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 100" role="img" aria-label="Holzer Druck">
+  <!-- Buchstaben-Stack-Icon -->
+  <g transform="translate(20, 22)">
+    <rect x="0" y="0" width="56" height="56" rx="2" fill="#1A4E8C"/>
+    <text x="28" y="42" font-family="Georgia, serif" font-size="38" font-weight="700" fill="#F5EFE0" text-anchor="middle">H</text>
+    <rect x="6" y="48" width="44" height="3" fill="#D63232"/>
+  </g>
+  <!-- Wortmarke -->
+  <text x="90" y="48" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#1A4E8C" letter-spacing="0.5">Holzer</text>
+  <text x="90" y="72" font-family="Arial, sans-serif" font-size="14" font-weight="400" fill="#2B2B2B" letter-spacing="6">DRUCKEREI</text>
+</svg>

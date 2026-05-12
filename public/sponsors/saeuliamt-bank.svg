@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" role="img" aria-label="Säuliamt Bank">
+  <!-- Wappen mit Berg-Silhouette -->
+  <g transform="translate(20, 18)">
+    <rect x="0" y="0" width="64" height="64" rx="4" fill="#1F4E3D"/>
+    <path d="M 8 50 L 24 18 L 36 36 L 48 14 L 56 50 Z" fill="#C8A85B"/>
+    <circle cx="48" cy="18" r="3" fill="#C8A85B"/>
+  </g>
+  <!-- Wortmarke -->
+  <text x="100" y="48" font-family="'Times New Roman', Georgia, serif" font-size="26" font-weight="700" fill="#1F4E3D" letter-spacing="1">SÄULIAMT</text>
+  <text x="100" y="74" font-family="'Times New Roman', Georgia, serif" font-size="14" font-weight="400" fill="#1F4E3D" letter-spacing="6">BANK · SEIT 1894</text>
+</svg>
