@@ -39,7 +39,7 @@ export const sponsors: Sponsor[] = [
   {
     slug: "holzer-druck",
     name: "Holzer Druckerei",
-    tier: "basic",
+    tier: "haupt",
     logoSrc: "/sponsors/holzer-druck.svg",
     websiteUrl: "https://www.holzer-druck.example",
   },
