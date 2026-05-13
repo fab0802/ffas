@@ -10,10 +10,10 @@
   padding: 0 48px;
 }
 
-/* ═══ TOP: 3 Spalten ═══ */
+/* ═══ TOP: 4 Spalten ═══ */
 .columns {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1.2fr;
+  grid-template-columns: 1.4fr 1fr 1.2fr 1fr;
   gap: 48px;
   padding-bottom: 40px;
 }
@@ -83,67 +83,42 @@
 }
 
 /* ═══ SPONSOREN-STREIFEN ═══ */
-.sponsors {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 28px 0 24px;
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
-.sponsorsLabel {
-  font-family: var(--mono);
-  font-size: 0.625rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
-  white-space: nowrap;
-}
-
-.sponsorsList {
-  display: flex;
-  gap: 16px;
-  flex: 1;
-}
-
-.sponsorCard {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 6px;
-  padding: 12px 20px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex: 1;
-  text-decoration: none;
-  color: inherit;
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.sponsorCard:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.15);
-}
-
-.sponsorText {
+.sponsorList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
+  gap: 18px;
 }
 
-.sponsorName {
-  font-family: var(--serif);
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.9);
+.sponsorLink {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 6px;
 }
 
-.sponsorTagline {
-  font-family: var(--mono);
-  font-size: 0.5625rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
+.sponsorLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--pink);
+  transition: width 0.3s ease;
+}
+
+.sponsorLink:hover::after {
+  width: 100%;
+}
+
+.sponsorLogo {
+  display: block;
+  height: auto;
+  width: 100%;
+  max-width: 140px;
+  object-fit: contain;
 }
 
 /* ═══ BOTTOM-BAR ═══ */
@@ -185,17 +160,6 @@
     grid-template-columns: 1fr;
     gap: 40px;
     padding-bottom: 32px;
-  }
-
-  .sponsors {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  .sponsorsList {
-    width: 100%;
-    flex-direction: column;
   }
 
   .bottom {

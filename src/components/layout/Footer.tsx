@@ -8,6 +8,8 @@ export default function Footer() {
   const hauptpartner = sponsors.filter((s) => s.tier === "haupt");
   const year = new Date().getFullYear();
 
+  console.log(hauptpartner);
+
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
@@ -34,10 +36,10 @@ export default function Footer() {
             </address>
           </div>
 
-          {/* Verein */}
+          {/* Gruppierung */}
           <nav className={styles.column} aria-labelledby="footer-verein">
             <h2 id="footer-verein" className={styles.heading}>
-              Verein
+              Gruppierung
             </h2>
             <ul className={styles.list}>
               <li>
@@ -58,10 +60,10 @@ export default function Footer() {
             </ul>
           </nav>
 
-          {/* Trägervereine */}
+          {/* Partnervereine */}
           <nav className={styles.column} aria-labelledby="footer-clubs">
             <h2 id="footer-clubs" className={styles.heading}>
-              Trägervereine
+              Partnervereine
             </h2>
             <ul className={styles.list}>
               {clubs.map((club) => (
@@ -81,49 +83,45 @@ export default function Footer() {
               ))}
             </ul>
           </nav>
-        </div>
-
-        {/* ═══ SPONSOREN-STREIFEN ═══ */}
-        <div className={styles.sponsors}>
-          <span className={styles.sponsorsLabel}>Hauptpartner</span>
-          <div className={styles.sponsorsList}>
-            {hauptpartner.map((sponsor) => {
-              const content = (
-                <>
-                  <Image
-                    src={sponsor.logoSrc}
-                    alt={sponsor.name}
-                    width={32}
-                    height={32}
-                    className={styles.sponsorLogo}
-                  />
-                  <div className={styles.sponsorText}>
-                    <span className={styles.sponsorName}>{sponsor.name}</span>
-                    {sponsor.description && (
-                      <span className={styles.sponsorTagline}>
-                        {sponsor.description}
-                      </span>
-                    )}
-                  </div>
-                </>
-              );
-
-              return sponsor.websiteUrl ? (
-                <a
-                  key={sponsor.slug}
-                  href={sponsor.websiteUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.sponsorCard}
-                >
-                  {content}
-                </a>
-              ) : (
-                <div key={sponsor.slug} className={styles.sponsorCard}>
-                  {content}
-                </div>
-              );
-            })}
+          {/* Hauptpartner */}
+          <div className={styles.column}>
+            <h2 id="footer-partners" className={styles.heading}>
+              Hauptpartner
+            </h2>
+            <ul
+              className={styles.sponsorList}
+              aria-labelledby="footer-partners"
+            >
+              {hauptpartner.map((sponsor) => (
+                <li key={sponsor.slug}>
+                  {sponsor.websiteUrl ? (
+                    <a
+                      href={sponsor.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.sponsorLink}
+                      aria-label={sponsor.name}
+                    >
+                      <Image
+                        src={sponsor.logoSrc}
+                        alt={sponsor.name}
+                        width={140}
+                        height={36}
+                        className={styles.sponsorLogo}
+                      />
+                    </a>
+                  ) : (
+                    <Image
+                      src={sponsor.logoSrc}
+                      alt={sponsor.name}
+                      width={140}
+                      height={36}
+                      className={styles.sponsorLogo}
+                    />
+                  )}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
