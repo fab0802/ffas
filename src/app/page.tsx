@@ -1,5 +1,6 @@
 import Button from "@/components/ui/Button";
-import Sponsors from "@/components/sections/Sponsors";
+import SponsorsSection from "@/components/sections/SponsorsSection";
+import { StatsSection } from "@/components/sections/StatsSection";
 
 export default function Home() {
   return (
@@ -24,7 +25,8 @@ export default function Home() {
         <Button href="#more" variant="ghost">
           Mehr erfahren
         </Button>
-        <Sponsors />
+        <StatsSection />
+        <SponsorsSection />
       </main>
     </>
   );
