@@ -1,6 +1,7 @@
 import Button from "@/components/ui/Button";
 import SponsorsSection from "@/components/sections/SponsorsSection";
 import { StatsSection } from "@/components/sections/StatsSection";
+import Ticker from "@/components/sections/Ticker";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
         </Button>
         <StatsSection />
         <SponsorsSection />
+        <Ticker />
       </main>
     </>
   );

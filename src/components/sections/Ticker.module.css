@@ -1,0 +1,65 @@
+.ticker {
+  overflow: hidden;
+  padding-block: 2.25rem;
+  /*
+    Etwas dunkler als der Body-Hintergrund, damit der Ticker als
+    eigene horizontale Bande aus der Seite heraussticht.
+    color-mix mischt schwarz ins Navy, ohne dass wir eine zweite
+    Farbvariable im Theme einführen müssen.
+  */
+  background: color-mix(in srgb, var(--bg, #0a1230) 70%, #000 30%);
+  border-block: 1px solid var(--pink-line);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: scroll 60s linear infinite;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding-right: 4rem;
+  white-space: nowrap;
+}
+
+.text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.35rem;
+  letter-spacing: 0.01em;
+  color: inherit;
+}
+
+.separator {
+  color: var(--pink);
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  line-height: 1;
+  transform: translateY(-0.1em);
+  opacity: 0.9;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  .duplicate {
+    display: none;
+  }
+}
