@@ -1,6 +1,6 @@
 import { getSponsorsByTier } from "@/helpers/sponsors";
 import SponsorCard from "@/components/cards/SponsorCard";
-import styles from "./Sponsors.module.css";
+import styles from "./SponsorsSection.module.css";
 
 export default function Sponsors() {
   const haupt = getSponsorsByTier("haupt");
