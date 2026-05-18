@@ -26,9 +26,9 @@ export default function Home() {
         <Button href="#more" variant="ghost">
           Mehr erfahren
         </Button>
+        <Ticker />
         <StatsSection />
         <SponsorsSection />
-        <Ticker />
       </main>
     </>
   );
