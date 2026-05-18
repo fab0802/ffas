@@ -2,7 +2,7 @@ import { getSponsorsByTier } from "@/helpers/sponsors";
 import SponsorCard from "@/components/cards/SponsorCard";
 import styles from "./SponsorsSection.module.css";
 
-export default function Sponsors() {
+export default function SponsorsSection() {
   const haupt = getSponsorsByTier("haupt");
   const premium = getSponsorsByTier("premium");
   const ausruester = getSponsorsByTier("ausruester");
