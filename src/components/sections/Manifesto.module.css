@@ -1,0 +1,139 @@
+.manifesto {
+  padding: 6rem 1.5rem;
+  background: var(--navy);
+  color: var(--cream);
+}
+
+.grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* ───────────── Left column: intro ───────────── */
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin: 0;
+}
+
+.heading {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--cream);
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--pink);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: color-mix(in srgb, var(--cream) 72%, transparent);
+  max-width: 38ch;
+}
+
+.body p {
+  margin: 0;
+}
+
+.body p:last-child {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-top: 0.5rem;
+}
+
+/* ───────────── Right column: values ───────────── */
+
+.values {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  border-left: 1px solid var(--pink-line);
+}
+
+.value {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: baseline;
+}
+
+.valueNumber {
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  color: var(--pink);
+  padding-top: 0.35rem;
+}
+
+.valueBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.valueTitle {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--cream);
+}
+
+.valueDescription {
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--cream) 72%, transparent);
+  margin: 0;
+}
+
+/* ───────────── Responsive ───────────── */
+
+@media (max-width: 900px) {
+  .manifesto {
+    padding: 4rem 1.25rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .values {
+    padding-left: 1.5rem;
+    gap: 2rem;
+  }
+}
