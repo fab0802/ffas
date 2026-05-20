@@ -1,0 +1,182 @@
+/* ───────────── Section frame ───────────── */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 8.75rem 2.5rem 5rem; /* 140px 40px 80px */
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 3.75rem;
+  align-items: center;
+  overflow: hidden;
+  background: var(--navy);
+  color: var(--cream);
+}
+
+/* FFAS-Wasserzeichen unten links, wie im Prototyp */
+.watermark {
+  position: absolute;
+  bottom: -80px;
+  left: -20px;
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: clamp(280px, 38vw, 580px);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: var(--navy-soft);
+  opacity: 0.55;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* Content über dem Watermark stapeln */
+.text,
+.logo {
+  position: relative;
+  z-index: 1;
+}
+
+/* ───────────── Left column: text ───────────── */
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.6875rem; /* 11px */
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin: 0 0 2rem;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 36px;
+  height: 1px;
+  background: var(--pink);
+}
+
+.title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(3.5rem, 8.2vw, 8.25rem); /* 56px – 132px */
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  margin: 0 0 2.25rem;
+}
+
+.title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--pink);
+}
+
+.stroke {
+  font-style: italic;
+  font-weight: 400;
+  -webkit-text-stroke: 1.5px var(--pink);
+  color: transparent;
+}
+
+.lead {
+  max-width: 30rem;
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--cream) 78%, transparent);
+  margin: 0 0 2.75rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1.125rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ───────────── Right column: logo ───────────── */
+
+.logo {
+  display: grid;
+  place-items: center;
+}
+
+.logoWrap {
+  position: relative;
+  width: min(100%, 460px);
+  aspect-ratio: 1;
+}
+
+.logoImg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+  filter: drop-shadow(0 30px 60px rgba(255, 102, 196, 0.15));
+  animation: floaty 8s ease-in-out infinite;
+}
+
+/* Rotierender Pink-Dashed-Außenring */
+.logoWrap::after {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  border: 1px dashed var(--pink-line);
+  border-radius: 50%;
+  animation: spin 50s linear infinite;
+  pointer-events: none;
+}
+
+/* ───────────── Animations ───────────── */
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logoImg,
+  .logoWrap::after {
+    animation: none;
+  }
+}
+
+/* ───────────── Responsive ───────────── */
+
+@media (max-width: 880px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 7.5rem 1.375rem 4rem; /* 120px 22px 64px */
+    gap: 2.5rem;
+  }
+
+  .logoWrap {
+    width: 280px;
+    margin: 0 auto;
+  }
+
+  .watermark {
+    font-size: clamp(180px, 50vw, 280px);
+    bottom: -40px;
+  }
+}

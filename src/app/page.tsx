@@ -1,37 +1,17 @@
-import Button from "@/components/ui/Button";
 import SponsorsSection from "@/components/sections/SponsorsSection";
 import { StatsSection } from "@/components/sections/StatsSection";
 import Ticker from "@/components/sections/Ticker";
 import Manifesto from "@/components/sections/Manifesto";
+import Hero from "@/components/sections/Hero";
 
 export default function Home() {
   return (
-    <>
-      <main style={{ padding: "100px 40px" }}>
-        <h1
-          style={{
-            fontFamily: "var(--serif)",
-            fontSize: 96,
-            fontWeight: 300,
-            fontVariationSettings: "'opsz' 144, 'SOFT' 0",
-            letterSpacing: "-0.02em",
-            lineHeight: 1,
-          }}
-        >
-          Hallo{" "}
-          <em style={{ color: "var(--pink)", fontStyle: "italic" }}>FFAS</em>.
-        </h1>
-        <Button href="#join" variant="primary">
-          Mitspielen
-        </Button>
-        <Button href="#more" variant="ghost">
-          Mehr erfahren
-        </Button>
-        <Ticker />
-        <StatsSection />
-        <SponsorsSection />
-        <Manifesto />
-      </main>
-    </>
+    <main style={{ padding: "100px 40px" }}>
+      <Hero />
+      <Ticker />
+      <StatsSection />
+      <SponsorsSection />
+      <Manifesto />
+    </main>
   );
 }
