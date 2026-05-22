@@ -1,5 +1,5 @@
 import styles from "./Ticker.module.css";
-import { getTickerItems } from "@/helpers/tickerItems";
+import { getTickerItems } from "@/helpers";
 
 export default async function Ticker() {
   const items = await getTickerItems();

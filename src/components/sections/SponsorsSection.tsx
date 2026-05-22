@@ -1,4 +1,4 @@
-import { getSponsorsByTier } from "@/helpers/sponsors";
+import { getSponsorsByTier } from "@/helpers";
 import SponsorCard from "@/components/cards/SponsorCard";
 import styles from "./SponsorsSection.module.css";
 
