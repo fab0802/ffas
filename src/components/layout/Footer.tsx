@@ -1,14 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { clubs } from "@/data/clubs";
-import { sponsors } from "@/data/sponsors";
+import { getSponsorsByTier } from "@/helpers";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
-  const hauptpartner = sponsors.filter((s) => s.tier === "haupt");
+  const hauptpartner = getSponsorsByTier("haupt");
   const year = new Date().getFullYear();
-
-  console.log(hauptpartner);
 
   return (
     <footer className={styles.footer}>

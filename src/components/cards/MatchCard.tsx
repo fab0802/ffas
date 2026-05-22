@@ -1,5 +1,9 @@
-// src/components/cards/MatchCard.tsx
-import { getTeamForMatch, getDisplayLeague, formatDateLong } from "@/helpers";
+import {
+  getTeamForMatch,
+  getDisplayLeague,
+  formatDateLong,
+  getMatchVenueName,
+} from "@/helpers";
 import type { Match } from "@/types/match";
 import styles from "./MatchCard.module.css";
 
@@ -36,6 +40,7 @@ function initials(name: string): string {
 export default function MatchCard({ match }: Props) {
   const team = getTeamForMatch(match);
   const league = getDisplayLeague(match);
+  const venueName = getMatchVenueName(match);
 
   const ffasName = team?.name ?? "FFAS";
   const ffasSub = team?.emphasis ?? "Albis Süd";
@@ -46,9 +51,9 @@ export default function MatchCard({ match }: Props) {
   const awaySub = match.home ? "Gast" : ffasSub;
 
   const dateLine = [
-    formatDateLong(match.date), // ← geändert
+    formatDateLong(match.date),
     match.time,
-    match.home && match.venue ? match.venue : undefined,
+    match.home && venueName ? venueName : undefined,
     !match.home ? "Auswärts" : undefined,
   ]
     .filter(Boolean)

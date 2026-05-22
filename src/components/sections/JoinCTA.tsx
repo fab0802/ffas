@@ -3,7 +3,11 @@ import styles from "./JoinCTA.module.css";
 
 export default function JoinCTA() {
   return (
-    <section className={styles.joinCta} aria-labelledby="join-heading">
+    <section
+      id="join"
+      className={styles.joinCta}
+      aria-labelledby="join-heading"
+    >
       <div className={styles.inner}>
         <p className={styles.eyebrow}>Mitmachen</p>
         <h2 id="join-heading" className={styles.heading}>

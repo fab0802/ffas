@@ -3,7 +3,11 @@ import styles from "./Manifesto.module.css";
 
 export default function Manifesto() {
   return (
-    <section className={styles.manifesto} aria-labelledby="manifesto-heading">
+    <section
+      id="manifest"
+      className={styles.manifesto}
+      aria-labelledby="manifesto-heading"
+    >
       <div className={styles.grid}>
         <div className={styles.intro}>
           <p className={styles.eyebrow}>Manifest</p>

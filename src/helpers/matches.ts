@@ -1,6 +1,6 @@
-// src/helpers/matches.ts
 import { getMatches } from "@/data/matches";
 import { teams } from "@/data/teams";
+import { getLocationBySlug } from "./locations";
 import type { Match } from "@/types/match";
 import type { Team } from "@/types/team";
 
@@ -13,6 +13,17 @@ export function getDisplayLeague(match: Match): string | undefined {
   return getTeamForMatch(match)?.liga;
 }
 
+/**
+ * Anzeigename für den Spielort.
+ * Bevorzugt locationSlug (intern referenziert), sonst venueText (Freitext).
+ */
+export function getMatchVenueName(match: Match): string | undefined {
+  if (match.locationSlug) {
+    return getLocationBySlug(match.locationSlug)?.name;
+  }
+  return match.venueText;
+}
+
 /** Soonest match from today onward, or undefined wenn keine zukünftigen. */
 export async function getNextMatch(): Promise<Match | undefined> {
   const matches = await getMatches();
@@ -22,10 +33,6 @@ export async function getNextMatch(): Promise<Match | undefined> {
     .sort((a, b) => a.date.localeCompare(b.date))[0];
 }
 
-/**
- * Nächste N Spiele. Optional ein Spiel ausschliessen (für den Fall,
- * dass das Featured-Match in der Card schon gezeigt wird).
- */
 export async function getUpcomingMatches(
   count: number,
   excludeDate?: string,

@@ -6,3 +6,4 @@ export * from "./sponsors";
 export * from "./tickerItems";
 export * from "./trainerAssignments";
 export * from "./news";
+export * from "./locations";

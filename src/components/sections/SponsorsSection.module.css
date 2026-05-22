@@ -1,7 +1,7 @@
 .section {
   padding: 6rem 2rem;
   background: var(--navy, #161a4d);
-  color: var(--mono, #e8e6d8);
+  color: var(--cream);
 }
 
 /* ─── Header ─────────────────────────────────── */
@@ -27,7 +27,7 @@
 .tag {
   background: var(--pink, #e83a8a);
   color: var(--navy, #161a4d);
-  font-family: var(--mono-font, monospace);
+  font-family: var(--mono, monospace);
   font-size: 0.7rem;
   letter-spacing: 0.2em;
   padding: 0.25rem 0.6rem;

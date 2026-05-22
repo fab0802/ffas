@@ -1,6 +1,6 @@
 export type Club = {
   slug: string;
   name: string;
-  homeGroundSlugs: Location[];
+  homeGroundSlugs: string[];
   website?: string;
 };

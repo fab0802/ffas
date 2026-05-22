@@ -1,9 +1,10 @@
-import { Address } from "./address";
-import { Field } from "./field";
+import type { Address } from "./address";
+import type { Field } from "./field";
 
 export type Location = {
+  slug: string;
   name: string;
   address: Address;
-  phone: string;
+  phone?: string;
   fields: Field[];
 };

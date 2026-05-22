@@ -1,4 +1,3 @@
-// src/data/matches.ts
 import type { Match } from "@/types/match";
 
 const stubMatches: Match[] = [
@@ -8,7 +7,7 @@ const stubMatches: Match[] = [
     teamSlug: "frauen-1",
     opponent: "FC Wallisellen 2",
     home: true,
-    venue: "Sportplatz Erlenmoos",
+    locationSlug: "moos",
     kind: "Meisterschaft",
   },
   {
@@ -17,6 +16,7 @@ const stubMatches: Match[] = [
     teamSlug: "frauen-1",
     opponent: "SV Höngg",
     home: false,
+    venueText: "Sportplatz Hönggerberg",
     kind: "Meisterschaft",
   },
   {
@@ -25,7 +25,7 @@ const stubMatches: Match[] = [
     teamSlug: "frauen-1",
     opponent: "FC Glattbrugg",
     home: true,
-    venue: "Sportplatz Erlenmoos",
+    locationSlug: "moos",
     kind: "Meisterschaft",
   },
   {
@@ -33,7 +33,7 @@ const stubMatches: Match[] = [
     teamSlug: "juniorinnen-c",
     opponent: "FC Wettswil-Bonstetten",
     home: true,
-    venue: "Sportplatz Türgi",
+    locationSlug: "jonentaeli", // ← Annahme; passe an wenn jun-c woanders spielt
     kind: "Testspiel",
   },
   {
@@ -42,14 +42,11 @@ const stubMatches: Match[] = [
     teamSlug: "juniorinnen-b",
     opponent: "FC Bülach",
     home: false,
+    venueText: "Sportplatz Erachfeld",
     kind: "Meisterschaft",
   },
 ];
 
-/**
- * Async-Wrapper — späterer Wechsel auf Scraping bleibt ein
- * Einzeiler-Diff, kein Aufruferseiten-Refactoring nötig.
- */
 export async function getMatches(): Promise<Match[]> {
   return stubMatches;
 }
