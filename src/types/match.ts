@@ -1,4 +1,4 @@
-import { MatchKind } from "./matchKind";
+import type { MatchKind } from "./matchKind";
 
 export type Match = {
   date: string; // ISO: "2026-05-17"
