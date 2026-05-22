@@ -1,5 +1,5 @@
 .section {
-  padding: 5rem 1.5rem;
+  padding: var(--section-py-tight) var(--section-px);
 }
 
 .grid {

@@ -1,4 +1,4 @@
-import { SponsorTier } from "./sponsorTier";
+import type { SponsorTier } from "./sponsorTier";
 
 export type Sponsor = {
   slug: string;

@@ -21,7 +21,6 @@ export default async function Ticker() {
               className={`${styles.item} ${isDuplicate ? styles.duplicate : ""}`}
               aria-hidden={isDuplicate || undefined}
             >
-              <span className={styles.label}>{item.kind}</span>
               <span className={styles.text}>{item.text}</span>
               <span className={styles.separator} aria-hidden="true">
                 ◆

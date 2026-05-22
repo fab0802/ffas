@@ -1,11 +1,5 @@
-// src/helpers/dates.ts
 import type { Weekday } from "@/types/weekday";
 
-/**
- * Index entspricht JS-`Date.getDay()`: 0 = Sonntag, 1 = Montag, ...
- * Bewusst als `readonly Weekday[]` getypt — wenn der `Weekday`-Type
- * irgendwann einen Wert verliert oder umbenennt, bricht es hier sofort.
- */
 const WEEKDAYS: readonly Weekday[] = [
   "Sonntag",
   "Montag",
@@ -65,4 +59,20 @@ export function formatDateLong(isoDate: string): string {
 export function formatDateShort(isoDate: string): string {
   const date = parseIsoDate(isoDate);
   return `${date.getDate()}. ${MONTHS_SHORT[date.getMonth()]}`;
+}
+
+/** "2026-04-28" → "28. APRIL 2026" (für Featured-News o.ä.) */
+export function formatDateLongUpper(isoDate: string): string {
+  const date = parseIsoDate(isoDate);
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = MONTHS_LONG[date.getMonth()].toUpperCase();
+  return `${day}. ${month} ${date.getFullYear()}`;
+}
+
+/** "2026-04-28" → "28. APRIL" */
+export function formatDateShortUpper(isoDate: string): string {
+  const date = parseIsoDate(isoDate);
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = MONTHS_LONG[date.getMonth()].toUpperCase();
+  return `${day}. ${month}`;
 }

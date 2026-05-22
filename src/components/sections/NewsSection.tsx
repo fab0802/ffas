@@ -1,3 +1,4 @@
+import Link from "next/link";
 import NewsCard from "@/components/cards/NewsCard";
 import { getFeaturedNews, getRecentNews } from "@/helpers";
 import styles from "./NewsSection.module.css";
@@ -18,9 +19,9 @@ export default async function NewsSection() {
         <h2 className={styles.title}>
           Aus dem <em>Klub</em>.
         </h2>
-        <a href="/news" className={styles.ghostBtn}>
+        <Link href="/news" className={styles.ghostBtn}>
           Alle Beiträge →
-        </a>
+        </Link>
       </div>
 
       <div className={styles.grid}>

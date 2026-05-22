@@ -10,8 +10,12 @@ export default function SponsorsSection() {
 
   return (
     <section className={styles.section}>
-      <header className={styles.header}>{/* ... unverändert ... */}</header>
-
+      <header className={styles.header}>
+        <p className={styles.eyebrow}>Partner</p>
+        <h2 className={styles.title}>
+          Wer mit uns <em>steht</em>.
+        </h2>
+      </header>
       {haupt.length > 0 && (
         <div className={styles.hauptWrapper}>
           <p className={styles.hauptLabel}>
@@ -24,7 +28,6 @@ export default function SponsorsSection() {
           </div>
         </div>
       )}
-
       {supporting.length > 0 && (
         <div className={styles.supportingGrid}>
           {supporting.map((s) => (

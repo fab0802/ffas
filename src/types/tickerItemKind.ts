@@ -1,1 +1,1 @@
-export type TickerItemKind = "Resultat" | "Termin" | "Slogan";
+export type TickerItemKind = "result" | "fixture" | "slogan";

@@ -1,4 +1,4 @@
-import { TickerItemKind } from "./tickerItemKind";
+import type { TickerItemKind } from "./tickerItemKind";
 
 export type TickerItem = {
   kind: TickerItemKind;

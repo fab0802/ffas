@@ -1,4 +1,4 @@
-import { TrainingSlot } from "./trainingSlot";
+import type { TrainingSlot } from "./trainingSlot";
 
 export type Team = {
   slug: string;

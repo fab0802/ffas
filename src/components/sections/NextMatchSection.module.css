@@ -1,5 +1,5 @@
 .section {
-  padding: 140px 40px;
+  padding: var(--section-py) var(--section-px);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
@@ -100,7 +100,6 @@
 @media (max-width: 880px) {
   .section {
     grid-template-columns: 1fr;
-    padding: 90px 22px;
     gap: 50px;
   }
   .row {

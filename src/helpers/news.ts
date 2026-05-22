@@ -28,33 +28,3 @@ export async function getRecentNews(
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, limit);
 }
-
-/**
- * Formatiert das Datum für die News-Card.
- * - "long"  → "28. APRIL 2026"   (für Featured)
- * - "short" → "22. APRIL"        (Standard)
- */
-export function formatNewsDate(
-  item: NewsItem,
-  variant: "long" | "short" = "short",
-): string {
-  const d = new Date(item.date);
-  const months = [
-    "JANUAR",
-    "FEBRUAR",
-    "MÄRZ",
-    "APRIL",
-    "MAI",
-    "JUNI",
-    "JULI",
-    "AUGUST",
-    "SEPTEMBER",
-    "OKTOBER",
-    "NOVEMBER",
-    "DEZEMBER",
-  ];
-  const day = String(d.getDate()).padStart(2, "0");
-  const month = months[d.getMonth()];
-  const year = d.getFullYear();
-  return variant === "long" ? `${day}. ${month} ${year}` : `${day}. ${month}`;
-}

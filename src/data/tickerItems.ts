@@ -1,11 +1,9 @@
 import type { TickerItem } from "@/types/tickerItem";
 
 export const tickerItems: TickerItem[] = [
-  { kind: "Slogan", text: "Frauenfussball im Säuliamt" },
-  { kind: "Resultat", text: "FFAS Frauen 1 – FC Adliswil 3:1" },
-  { kind: "Termin", text: "So 14:00 – Heimspiel Sportplatz Heisch" },
-  { kind: "Slogan", text: "Fünf Vereine, ein Team" },
-  { kind: "Resultat", text: "FFAS Juniorinnen B – FC Wädenswil 2:2" },
-  { kind: "Termin", text: "Sa 10:30 – Auswärtsspiel in Affoltern" },
-  { kind: "Slogan", text: "Albis Süd. Tor für Tor." },
+  { kind: "result", text: "FFAS Frauen 1 – FC Adliswil 3:1" },
+  { kind: "result", text: "FC Wädenswil – FFAS Juniorinnen B 2:2" },
+  { kind: "result", text: "FFAS Juniorinnen C – FC Horgen 4:0" },
+  { kind: "result", text: "SV Höngg – FFAS Frauen 1 1:1" },
+  { kind: "result", text: "FFAS Juniorinnen D – FC Wallisellen 5:2" },
 ];

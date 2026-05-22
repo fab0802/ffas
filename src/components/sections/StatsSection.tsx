@@ -5,7 +5,7 @@ function formatValue(value: number): string {
   return String(value).padStart(2, "0");
 }
 
-export function StatsSection() {
+export default function StatsSection() {
   return (
     <section className={styles.section}>
       <ul className={styles.grid}>

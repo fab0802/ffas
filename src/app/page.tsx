@@ -1,5 +1,5 @@
 import SponsorsSection from "@/components/sections/SponsorsSection";
-import { StatsSection } from "@/components/sections/StatsSection";
+import StatsSection from "@/components/sections/StatsSection";
 import Ticker from "@/components/sections/Ticker";
 import Manifesto from "@/components/sections/Manifesto";
 import Hero from "@/components/sections/Hero";
@@ -10,7 +10,7 @@ import JoinCTA from "@/components/sections/JoinCTA";
 
 export default function Home() {
   return (
-    <main style={{ padding: "0 40px" }}>
+    <main>
       <Hero />
       <Ticker />
       <StatsSection />

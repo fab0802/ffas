@@ -1,5 +1,5 @@
 .manifesto {
-  padding: 6rem 1.5rem;
+  padding: var(--section-py) var(--section-px);
   background: var(--navy);
   color: var(--cream);
 }
@@ -123,10 +123,6 @@
 /* ───────────── Responsive ───────────── */
 
 @media (max-width: 900px) {
-  .manifesto {
-    padding: 4rem 1.25rem;
-  }
-
   .grid {
     grid-template-columns: 1fr;
     gap: 3.5rem;

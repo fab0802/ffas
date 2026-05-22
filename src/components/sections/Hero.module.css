@@ -3,7 +3,7 @@
 .hero {
   position: relative;
   min-height: 100vh;
-  padding: 8.75rem 2.5rem 5rem; /* 140px 40px 80px */
+  padding: var(--section-py) var(--section-px) var(--section-py-tight);
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   gap: 3.75rem;
@@ -166,7 +166,6 @@
 @media (max-width: 880px) {
   .hero {
     grid-template-columns: 1fr;
-    padding: 7.5rem 1.375rem 4rem; /* 120px 22px 64px */
     gap: 2.5rem;
   }
 

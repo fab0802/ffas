@@ -3,7 +3,7 @@
 .joinCta {
   background: var(--pink);
   color: var(--navy);
-  padding: 120px 40px;
+  padding: var(--section-py) var(--section-px) calc(var(--section-py) + 2rem);
   position: relative;
   overflow: hidden;
 }
