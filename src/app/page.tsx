@@ -6,6 +6,7 @@ import Hero from "@/components/sections/Hero";
 import TeamsSection from "@/components/sections/TeamsSection";
 import NextMatchSection from "@/components/sections/NextMatchSection";
 import NewsSection from "@/components/sections/NewsSection";
+import JoinCTA from "@/components/sections/JoinCTA";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <TeamsSection />
       <NextMatchSection />
       <NewsSection />
+      <JoinCTA />
     </main>
   );
 }

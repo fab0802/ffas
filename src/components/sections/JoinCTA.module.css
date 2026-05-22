@@ -1,0 +1,137 @@
+/* ── Block ────────────────────────────────────────── */
+
+.joinCta {
+  background: var(--pink);
+  color: var(--navy);
+  padding: 120px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.joinCta ::selection {
+  background: var(--navy);
+  color: var(--pink);
+}
+
+.inner {
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Eyebrow ──────────────────────────────────────── */
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--navy);
+  opacity: 0.7;
+  margin: 0 0 24px;
+}
+
+/* ── Headline ─────────────────────────────────────── */
+
+.heading {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(72px, 12vw, 168px);
+  line-height: 0.85;
+  letter-spacing: -0.025em;
+  margin: 0 0 36px;
+  color: var(--navy);
+}
+
+.heading em {
+  font-style: italic;
+  font-feature-settings:
+    "swsh" 1,
+    "ss01" 1;
+  color: var(--navy);
+  font-size: 1.08em;
+  display: inline-block;
+}
+
+.outlined {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--navy);
+}
+
+/* ── Lead-Text ────────────────────────────────────── */
+
+.lead {
+  font-size: 19px;
+  line-height: 1.55;
+  max-width: 640px;
+  margin: 0 auto 48px;
+  color: var(--navy);
+  opacity: 0.85;
+}
+
+/* ── Actions ──────────────────────────────────────── */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px 36px;
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 17px 32px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: var(--navy);
+  color: var(--cream);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px -10px rgba(1, 12, 69, 0.5);
+}
+
+.secondary {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 4px;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+
+.secondary:hover {
+  opacity: 0.65;
+  transform: translateX(3px);
+}
+
+/* ── Mobile ───────────────────────────────────────── */
+
+@media (max-width: 720px) {
+  .joinCta {
+    padding: 80px 24px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 28px;
+  }
+}
