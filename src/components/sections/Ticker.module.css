@@ -1,6 +1,6 @@
 .ticker {
   overflow: hidden;
-  padding-block: 2.25rem;
+  padding-block: 1.5rem;
   /*
     Etwas dunkler als der Body-Hintergrund, damit der Ticker als
     eigene horizontale Bande aus der Seite heraussticht.

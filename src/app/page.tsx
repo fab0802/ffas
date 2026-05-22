@@ -10,7 +10,7 @@ import JoinCTA from "@/components/sections/JoinCTA";
 
 export default function Home() {
   return (
-    <main style={{ padding: "100px 40px" }}>
+    <main style={{ padding: "0 40px" }}>
       <Hero />
       <Ticker />
       <StatsSection />
