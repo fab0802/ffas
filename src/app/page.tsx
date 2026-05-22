@@ -3,6 +3,7 @@ import { StatsSection } from "@/components/sections/StatsSection";
 import Ticker from "@/components/sections/Ticker";
 import Manifesto from "@/components/sections/Manifesto";
 import Hero from "@/components/sections/Hero";
+import TeamsSection from "@/components/sections/TeamsSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <StatsSection />
       <SponsorsSection />
       <Manifesto />
+      <TeamsSection />
     </main>
   );
 }

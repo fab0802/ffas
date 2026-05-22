@@ -1,0 +1,62 @@
+.card {
+  padding: 40px 36px 44px;
+  border-right: 1px solid var(--pink-line);
+  border-bottom: 1px solid var(--pink-line);
+  position: relative;
+  transition: background 0.4s;
+  overflow: hidden;
+}
+
+.card:hover {
+  background: var(--pink-soft);
+}
+
+.age {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--pink);
+  letter-spacing: 0.2em;
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.arrow {
+  font-size: 18px;
+  transition: transform 0.4s;
+}
+
+.card:hover .arrow {
+  transform: translate(4px, -4px);
+}
+
+.title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 44px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--pink);
+}
+
+.liga {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: rgba(250, 246, 238, 0.5);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 14px;
+  color: rgba(250, 246, 238, 0.7);
+  line-height: 1.65;
+  margin: 0;
+}

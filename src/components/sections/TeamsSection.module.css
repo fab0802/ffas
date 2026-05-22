@@ -1,0 +1,65 @@
+.section {
+  padding: 140px 40px;
+  background: var(--navy-deep);
+  border-top: 1px solid rgba(250, 246, 238, 0.08);
+  border-bottom: 1px solid rgba(250, 246, 238, 0.08);
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 80px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.heading {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(48px, 6vw, 96px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  max-width: 700px;
+  margin: 0;
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--pink);
+}
+
+.meta {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 238, 0.5);
+  text-align: right;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--pink-line);
+}
+
+/* Letzte Spalte (jede 3. Karte) hat keinen rechten Border */
+.grid > *:nth-child(3n) {
+  border-right: 0;
+}
+
+@media (max-width: 880px) {
+  .section {
+    padding: 90px 22px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  /* Auf Mobile gibt's nur eine Spalte → kein right-border irgendwo */
+  .grid > * {
+    border-right: 0 !important;
+  }
+}
