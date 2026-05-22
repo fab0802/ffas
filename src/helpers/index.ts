@@ -5,3 +5,4 @@ export * from "./persons";
 export * from "./sponsors";
 export * from "./tickerItems";
 export * from "./trainerAssignments";
+export * from "./news";

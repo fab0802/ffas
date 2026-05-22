@@ -5,6 +5,7 @@ import Manifesto from "@/components/sections/Manifesto";
 import Hero from "@/components/sections/Hero";
 import TeamsSection from "@/components/sections/TeamsSection";
 import NextMatchSection from "@/components/sections/NextMatchSection";
+import NewsSection from "@/components/sections/NewsSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Manifesto />
       <TeamsSection />
       <NextMatchSection />
+      <NewsSection />
     </main>
   );
 }
