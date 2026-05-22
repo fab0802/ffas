@@ -1,4 +1,4 @@
-import type { Value } from "@/data/types/value";
+import type { Value } from "@/types/value";
 
 export const values: Value[] = [
   {

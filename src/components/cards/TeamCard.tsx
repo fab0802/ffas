@@ -1,4 +1,4 @@
-import { Team } from "@/data/types/team";
+import { Team } from "@/types/team";
 import styles from "./TeamCard.module.css";
 
 export type TeamCardProps = {

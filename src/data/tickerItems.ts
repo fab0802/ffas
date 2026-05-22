@@ -1,4 +1,4 @@
-import type { TickerItem } from "@/data/types/tickerItem";
+import type { TickerItem } from "@/types/tickerItem";
 
 export const tickerItems: TickerItem[] = [
   { kind: "Slogan", text: "Frauenfussball im Säuliamt" },

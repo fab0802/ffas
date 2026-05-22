@@ -1,4 +1,4 @@
-import type { Club } from "@/data/types/club";
+import type { Club } from "@/types/club";
 
 export const clubs: Club[] = [
   {
