@@ -1,0 +1,114 @@
+.section {
+  padding: 140px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ── Linke Spalte: Text + Liste ──────────────────────── */
+
+.text {
+  max-width: 520px;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(46px, 5.5vw, 84px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 32px;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--pink);
+}
+
+.lead {
+  font-size: 16px;
+  color: rgba(250, 246, 238, 0.75);
+  line-height: 1.7;
+  margin-bottom: 30px;
+  max-width: 460px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--pink-line);
+}
+
+.row {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--pink-line);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 22px;
+  align-items: center;
+  font-size: 14px;
+  transition:
+    padding 0.3s,
+    color 0.3s;
+}
+
+.row:hover {
+  padding-left: 8px;
+  color: var(--pink);
+}
+
+.date {
+  font-family: var(--mono);
+  color: var(--pink);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+}
+
+.opp {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+}
+
+.loc {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: rgba(250, 246, 238, 0.5);
+  text-transform: uppercase;
+}
+
+/* ── Rechte Spalte: Card ─────────────────────────────── */
+
+.cardWrap {
+  width: 100%;
+}
+
+@media (max-width: 880px) {
+  .section {
+    grid-template-columns: 1fr;
+    padding: 90px 22px;
+    gap: 50px;
+  }
+  .row {
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+  }
+  .loc {
+    grid-column: 1 / -1;
+    padding-left: calc(11px + 22px); /* unter dem Datum */
+  }
+}

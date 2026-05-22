@@ -4,6 +4,7 @@ import Ticker from "@/components/sections/Ticker";
 import Manifesto from "@/components/sections/Manifesto";
 import Hero from "@/components/sections/Hero";
 import TeamsSection from "@/components/sections/TeamsSection";
+import NextMatchSection from "@/components/sections/NextMatchSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <SponsorsSection />
       <Manifesto />
       <TeamsSection />
+      <NextMatchSection />
     </main>
   );
 }
