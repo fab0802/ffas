@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { clubs } from "@/data/clubs";
-import { getSponsorsByTier } from "@/helpers";
+import { getClubs, getSponsorsByTier } from "@/helpers";
 import styles from "./Footer.module.css";
 
-export default function Footer() {
+export default async function Footer() {
+  const clubs = await getClubs();
   const hauptpartner = getSponsorsByTier("haupt");
   const year = new Date().getFullYear();
 
@@ -17,7 +17,7 @@ export default function Footer() {
           <div className={styles.brand}>
             <Image
               src="/ffas-logo.svg"
-              alt="FFAS"
+              alt="Frauenfussball Albis Süd"
               width={56}
               height={56}
               className={styles.logo}
@@ -63,22 +63,37 @@ export default function Footer() {
             <h2 id="footer-clubs" className={styles.heading}>
               Partnervereine
             </h2>
-            <ul className={styles.list}>
-              {clubs.map((club) => (
-                <li key={club.slug}>
-                  {club.website ? (
-                    <a
-                      href={club.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {club.name}
-                    </a>
-                  ) : (
+            <ul className={styles.clubList}>
+              {clubs.map((club) => {
+                const inner = (
+                  <>
+                    <Image
+                      src={club.logo}
+                      alt=""
+                      width={28}
+                      height={28}
+                      className={styles.clubLogo}
+                    />
                     <span>{club.name}</span>
-                  )}
-                </li>
-              ))}
+                  </>
+                );
+                return (
+                  <li key={club.slug} className={styles.clubItem}>
+                    {club.website ? (
+                      <a
+                        href={club.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.clubLink}
+                      >
+                        {inner}
+                      </a>
+                    ) : (
+                      <span className={styles.clubLink}>{inner}</span>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </nav>
           {/* Hauptpartner */}

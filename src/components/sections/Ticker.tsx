@@ -1,5 +1,5 @@
 import styles from "./Ticker.module.css";
-import { getTickerItems } from "@/helpers";
+import { getTickerItems, formatTickerItem } from "@/helpers";
 
 export default async function Ticker() {
   const items = await getTickerItems();
@@ -21,7 +21,7 @@ export default async function Ticker() {
               className={`${styles.item} ${isDuplicate ? styles.duplicate : ""}`}
               aria-hidden={isDuplicate || undefined}
             >
-              <span className={styles.text}>{item.text}</span>
+              <span className={styles.text}>{formatTickerItem(item)}</span>
               <span className={styles.separator} aria-hidden="true">
                 ◆
               </span>

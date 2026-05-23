@@ -1,6 +1,22 @@
 import type { TickerItemKind } from "./tickerItemKind";
 
-export type TickerItem = {
-  kind: TickerItemKind;
-  text: string;
-};
+export type TickerItem =
+  | {
+      kind: "result";
+      teamSlug: string;
+      opponent: string;
+      isHome: boolean;
+      goalsFor: number;
+      goalsAgainst: number;
+    }
+  | {
+      kind: "upcoming";
+      teamSlug: string;
+      opponent: string;
+      isHome: boolean;
+      kickoff: string;
+    }
+  | {
+      kind: "news";
+      text: string;
+    };

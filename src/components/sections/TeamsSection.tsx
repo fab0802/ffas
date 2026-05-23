@@ -1,13 +1,15 @@
-import { teams } from "@/data/teams";
 import TeamCard from "@/components/cards/TeamCard";
+import { getTeams, getTeamsCountWord } from "@/helpers";
 import styles from "./TeamsSection.module.css";
 
 export default function TeamsSection() {
+  const teams = getTeams();
+
   return (
     <section className={styles.section} id="teams">
       <div className={styles.head}>
         <h2 className={styles.heading}>
-          Zehn Teams.
+          {getTeamsCountWord()} Teams.
           <br />
           Eine <em>Farbe</em>.
         </h2>

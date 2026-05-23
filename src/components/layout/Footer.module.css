@@ -146,6 +146,41 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
+.clubList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.clubItem {
+  margin: 0;
+}
+
+.clubLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: inherit;
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.clubLink:hover {
+  color: var(--pink);
+}
+
+.clubLogo {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
 /* ═══ MOBILE ═══ */
 @media (max-width: 900px) {
   .footer {

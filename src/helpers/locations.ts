@@ -1,5 +1,5 @@
 import { locations } from "@/data/locations";
-import { clubs } from "@/data/clubs";
+import { getClubs } from "@/data/clubs";
 import type { Location } from "@/types/location";
 import type { Field } from "@/types/field";
 
@@ -23,7 +23,10 @@ export function getFieldBySlug(slug: string): Field | undefined {
 /**
  * Alle Heimplätze eines Trägervereins.
  */
-export function getLocationsForClub(clubSlug: string): Location[] {
+export async function getLocationsForClub(
+  clubSlug: string,
+): Promise<Location[]> {
+  const clubs = await getClubs();
   const club = clubs.find((c) => c.slug === clubSlug);
   if (!club) return [];
   return club.homeGroundSlugs

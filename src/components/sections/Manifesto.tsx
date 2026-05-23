@@ -32,7 +32,7 @@ export default function Manifesto() {
               Mettmenstetten, aus Hedingen, aus Wettswil-Bonstetten und aus
               Uitikon. Eine Idee, fünf Vereine, ein Spielbetrieb.
             </p>
-            <p>Was uns trägt, steht rechts.</p>
+            <p>Was uns trägt:</p>
           </div>
         </div>
 

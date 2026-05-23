@@ -3,4 +3,5 @@ export type Club = {
   name: string;
   homeGroundSlugs: string[];
   website?: string;
+  logo: string;
 };
