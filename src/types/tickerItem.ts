@@ -1,5 +1,3 @@
-import type { TickerItemKind } from "./tickerItemKind";
-
 export type TickerItem =
   | {
       kind: "result";
