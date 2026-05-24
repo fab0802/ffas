@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Team } from "@/types/team";
 import styles from "./TeamCard.module.css";
 
@@ -7,7 +8,7 @@ export type TeamCardProps = {
 
 export default function TeamCard({ team }: TeamCardProps) {
   return (
-    <article className={styles.card}>
+    <Link href={`/teams/${team.slug}`} className={styles.card}>
       <div className={styles.age}>
         <span>{team.ageRange}</span>
         <span className={styles.arrow} aria-hidden="true">
@@ -22,6 +23,6 @@ export default function TeamCard({ team }: TeamCardProps) {
       <div className={styles.liga}>{team.liga}</div>
 
       <p className={styles.description}>{team.description}</p>
-    </article>
+    </Link>
   );
 }
