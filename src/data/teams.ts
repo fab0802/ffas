@@ -24,6 +24,7 @@ export const teams: Team[] = [
         fieldSlug: "moos-1",
       },
     ],
+    photo: "/images/teams/Aktive1.png",
   },
   {
     slug: "frauen-2",
@@ -49,6 +50,7 @@ export const teams: Team[] = [
         fieldSlug: "suerenloh-2",
       },
     ],
+    photo: "/images/teams/Aktive2.png",
   },
   {
     slug: "juniorinnen-c",
@@ -99,6 +101,7 @@ export const teams: Team[] = [
         fieldSlug: "moos-3",
       },
     ],
+    photo: "/images/teams/JuniorinnenD9a.jpg",
   },
   {
     slug: "juniorinnen-d9b",
@@ -123,6 +126,7 @@ export const teams: Team[] = [
         fieldSlug: "schlag-1",
       },
     ],
+    photo: "/images/teams/JuniorinnenD9b.jpg",
   },
   {
     slug: "juniorinnen-d7a",
@@ -147,6 +151,7 @@ export const teams: Team[] = [
         fieldSlug: "wygarten-1",
       },
     ],
+    photo: "/images/teams/JuniorinnenD7a.jpg",
   },
   {
     slug: "juniorinnen-d7b",
@@ -172,6 +177,7 @@ export const teams: Team[] = [
         fieldSlug: "jonentaeli-2",
       },
     ],
+    photo: "/images/teams/JuniorinnenD7b.jpg",
   },
   {
     slug: "juniorinnen-ea",
@@ -197,6 +203,7 @@ export const teams: Team[] = [
         fieldSlug: "suerenloh-2",
       },
     ],
+    photo: "/images/teams/JuniorinnenEa.jpg",
   },
   {
     slug: "juniorinnen-eb",
@@ -222,6 +229,7 @@ export const teams: Team[] = [
         fieldSlug: "schlag-1",
       },
     ],
+    photo: "/images/teams/JuniorinnenEb.jpg",
   },
   {
     slug: "juniorinnen-f",
