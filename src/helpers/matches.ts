@@ -46,3 +46,48 @@ export async function getUpcomingMatches(
     .sort((a, b) => a.date.localeCompare(b.date))
     .slice(0, count);
 }
+
+/** Alle zukünftigen Spiele eines bestimmten Teams, chronologisch sortiert. */
+export async function getUpcomingMatchesForTeam(
+  teamSlug: string,
+  count?: number,
+): Promise<Match[]> {
+  const matches = await getMatches();
+  const today = new Date().toISOString().slice(0, 10);
+  const filtered = matches
+    .filter((m) => m.teamSlug === teamSlug && m.date >= today)
+    .sort((a, b) => a.date.localeCompare(b.date));
+  return count !== undefined ? filtered.slice(0, count) : filtered;
+}
+
+/** Vergangene Spiele eines Teams mit Resultat, neueste zuerst. */
+export async function getRecentResultsForTeam(
+  teamSlug: string,
+  count?: number,
+): Promise<Match[]> {
+  const matches = await getMatches();
+  const today = new Date().toISOString().slice(0, 10);
+  const filtered = matches
+    .filter((m) => m.teamSlug === teamSlug && m.date < today && m.result)
+    .sort((a, b) => b.date.localeCompare(a.date));
+  return count !== undefined ? filtered.slice(0, count) : filtered;
+}
+
+/**
+ * Resultat aus FFAS-Sicht: { ffas, opponent, outcome }.
+ * Liefert undefined, wenn kein Result auf dem Match.
+ */
+export type FfasResult = {
+  ffas: number;
+  opponent: number;
+  outcome: "win" | "draw" | "loss";
+};
+
+export function getFfasResult(match: Match): FfasResult | undefined {
+  if (!match.result) return undefined;
+  const ffas = match.home ? match.result.home : match.result.away;
+  const opponent = match.home ? match.result.away : match.result.home;
+  const outcome: FfasResult["outcome"] =
+    ffas > opponent ? "win" : ffas < opponent ? "loss" : "draw";
+  return { ffas, opponent, outcome };
+}

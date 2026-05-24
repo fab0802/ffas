@@ -9,4 +9,8 @@ export type Match = {
   locationSlug?: string;
   venueText?: string;
   kind: MatchKind;
+  result?: {
+    home: number;
+    away: number;
+  };
 };
