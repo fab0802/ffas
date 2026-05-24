@@ -1,0 +1,31 @@
+.block {
+  /* leer, Page hat gap */
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Untergrund für den Moment vor dem Laden */
+  background: color-mix(in srgb, var(--navy) 80%, #000 20%);
+}
+
+.placeholder {
+  aspect-ratio: 3 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--navy) 85%, #000 15%) 0%,
+    color-mix(in srgb, var(--navy) 70%, var(--pink) 30%) 100%
+  );
+}
+
+.placeholderInitial {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(5rem, 14vw, 10rem);
+  font-weight: 400;
+  color: color-mix(in srgb, var(--cream) 50%, transparent);
+}

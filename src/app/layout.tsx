@@ -3,6 +3,7 @@ import { Fraunces, Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
+import ScrollToTop from "@/components/layout/ScrollToTop";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -65,6 +66,7 @@ export default function RootLayout({
       className={`${fraunces.variable} ${manrope.variable} ${jetbrains.variable}`}
     >
       <body>
+        <ScrollToTop />
         <Nav />
         {children}
         <Footer />

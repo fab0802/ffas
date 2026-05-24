@@ -1,0 +1,97 @@
+.block {
+  /* leer, Page hat gap */
+}
+
+.heading {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--pink-line);
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.photoWrap {
+  position: relative;
+  aspect-ratio: 1;
+  background: color-mix(in srgb, var(--navy) 80%, #000 20%);
+  overflow: hidden;
+}
+
+.photo {
+  object-fit: cover;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.role {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin: 0;
+}
+
+.name {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.contact {
+  margin: 0;
+}
+
+.contactLink {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: color-mix(in srgb, var(--cream) 60%, transparent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contactLink:hover {
+  color: var(--pink);
+}
+
+@media (max-width: 880px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    flex-direction: row;
+    align-items: center;
+  }
+  .photoWrap {
+    flex-shrink: 0;
+    width: 100px;
+  }
+}

@@ -45,3 +45,20 @@ export function getTeamsCountWord(): string {
 export function getTeamBySlug(slug: string): Team | undefined {
   return teams.find((team) => team.slug === slug);
 }
+
+/**
+ * Liefert das vorherige und nächste Team in der Reihenfolge von data/teams.ts.
+ * Beide können undefined sein (am Anfang/Ende der Liste).
+ */
+export function getAdjacentTeams(currentSlug: string): {
+  previous: Team | undefined;
+  next: Team | undefined;
+} {
+  const index = teams.findIndex((t) => t.slug === currentSlug);
+  if (index === -1) return { previous: undefined, next: undefined };
+
+  return {
+    previous: index > 0 ? teams[index - 1] : undefined,
+    next: index < teams.length - 1 ? teams[index + 1] : undefined,
+  };
+}

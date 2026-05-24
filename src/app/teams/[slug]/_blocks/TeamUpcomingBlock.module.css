@@ -1,0 +1,85 @@
+.block {
+  /* leer */
+}
+
+.heading {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--pink-line);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr 1.5fr 0.6fr;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--pink-line);
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.date {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pink);
+}
+
+.opponent {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.venue {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--cream) 70%, transparent);
+}
+
+.time {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  text-align: right;
+  color: color-mix(in srgb, var(--cream) 85%, transparent);
+}
+
+@media (max-width: 700px) {
+  .row {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "date date"
+      "opponent time"
+      "venue venue";
+    gap: 0.5rem;
+  }
+  .date {
+    grid-area: date;
+  }
+  .opponent {
+    grid-area: opponent;
+  }
+  .venue {
+    grid-area: venue;
+  }
+  .time {
+    grid-area: time;
+    text-align: right;
+  }
+}
