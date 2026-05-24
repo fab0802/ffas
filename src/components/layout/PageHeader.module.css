@@ -1,0 +1,42 @@
+.header {
+  padding: var(--section-py) var(--section-px) var(--section-py-tight);
+  background: var(--navy);
+  color: var(--cream);
+  border-bottom: 1px solid var(--pink-line);
+}
+
+.inner {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin: 0 0 1.5rem;
+}
+
+.title {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--pink);
+}
+
+.lead {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--cream) 78%, transparent);
+  margin: 1.5rem 0 0;
+  max-width: 60ch;
+}
