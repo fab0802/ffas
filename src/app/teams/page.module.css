@@ -1,0 +1,37 @@
+.page {
+  padding: var(--section-py-tight) var(--section-px) var(--section-py);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.aktiveSection {
+  margin-bottom: var(--section-py);
+}
+
+/* Aktive: 2-spaltig, grosse Cards */
+.aktiveGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Juniorinnen: 3-spaltig, normale Cards */
+.juniorinnenGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+  .juniorinnenGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .aktiveGrid,
+  .juniorinnenGrid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}

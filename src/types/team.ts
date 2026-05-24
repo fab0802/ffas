@@ -8,6 +8,7 @@ export type Team = {
   liga: string;
   description: string;
   trainings: TrainingSlot[];
+  photo?: string;
 };
 
 // Trainer werden über Assignements zugewiesen
