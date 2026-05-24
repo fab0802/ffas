@@ -7,9 +7,7 @@ import {
 import type { Match } from "@/types/match";
 import styles from "./MatchCard.module.css";
 
-type Props = {
-  match: Match;
-};
+export type MatchCardProps = { match: Match };
 
 /**
  * Pill-Label oben rechts: kontextabhängig nach MatchKind.
@@ -37,7 +35,7 @@ function initials(name: string): string {
   return (parts[0][0] + parts[1][0]).toUpperCase();
 }
 
-export default function MatchCard({ match }: Props) {
+export default function MatchCard({ match }: MatchCardProps) {
   const team = getTeamForMatch(match);
   const league = getDisplayLeague(match);
   const venueName = getMatchVenueName(match);

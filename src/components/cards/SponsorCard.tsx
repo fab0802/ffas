@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { Sponsor } from "@/types/sponsor";
 import styles from "./SponsorCard.module.css";
 
-type SponsorCardProps = {
+export type SponsorCardProps = {
   sponsor: Sponsor;
   variant?: "haupt" | "supporting";
 };

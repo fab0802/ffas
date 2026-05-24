@@ -2,9 +2,9 @@ import type { NewsItem } from "@/types/news";
 import { formatDateLongUpper, formatDateShortUpper } from "@/helpers";
 import styles from "./NewsCard.module.css";
 
-type Props = { item: NewsItem };
+export type NewsCardProps = { item: NewsItem };
 
-export default function NewsCard({ item }: Props) {
+export default function NewsCard({ item }: NewsCardProps) {
   const featured = !!item.featured;
   return (
     <article className={`${styles.card} ${featured ? styles.featured : ""}`}>

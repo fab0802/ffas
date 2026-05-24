@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./Button.module.css";
 
-type ButtonProps = {
+export type ButtonProps = {
   href: string;
   variant?: "primary" | "ghost";
   children: React.ReactNode;
