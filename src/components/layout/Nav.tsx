@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { mainNav } from "@/data/navigation";
+import NavLinks from "./NavLinks";
 import styles from "./Nav.module.css";
 
 export default function Nav() {
@@ -15,13 +15,7 @@ export default function Nav() {
           priority
         />
       </Link>
-      <ul className={styles.links}>
-        {mainNav.map((item) => (
-          <li key={item.href}>
-            <Link href={item.href}>{item.label}</Link>
-          </li>
-        ))}
-      </ul>
+      <NavLinks />
     </nav>
   );
 }
