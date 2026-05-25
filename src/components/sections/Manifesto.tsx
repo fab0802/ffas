@@ -20,8 +20,8 @@ export default function Manifesto() {
           </h2>
           <div className={styles.body}>
             <p>
-              FF Albis Süd ist kein neunter Verein im Tal. Wir sind die Klammer
-              um fünf, die gemerkt haben, dass Mädchen- und Frauenfussball zu
+              FF Albis Süd ist kein neunter Klub im Tal. Wir sind die Klammer um
+              fünf, die gemerkt haben, dass Mädchen- und Frauenfussball zu
               wichtig geworden ist, um ihn in jedem Dorf für sich allein zu
               organisieren.
             </p>

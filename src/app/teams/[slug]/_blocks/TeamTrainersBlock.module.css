@@ -32,10 +32,26 @@
   aspect-ratio: 1;
   background: color-mix(in srgb, var(--navy) 80%, #000 20%);
   overflow: hidden;
+  border-radius: 50%;
 }
 
 .photo {
   object-fit: cover;
+}
+
+.initials {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 3rem;
+  color: var(--pink);
+  background: color-mix(in srgb, var(--pink) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--pink) 40%, transparent);
+  line-height: 1;
 }
 
 .text {

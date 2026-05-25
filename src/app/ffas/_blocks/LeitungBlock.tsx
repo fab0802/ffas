@@ -21,8 +21,8 @@ export default async function LeitungBlock() {
           Wer FFAS <em>trägt</em>
         </h2>
         <p className={styles.lead}>
-          FFAS hat keinen Vorstand im klassischen Vereinssinn — aber Menschen,
-          die das Ganze tragen, organisieren und nach aussen vertreten.
+          FFAS hat keinen Vorstand im klassischen Sinn — aber Menschen, die das
+          Ganze tragen, organisieren und nach aussen vertreten.
         </p>
       </header>
 

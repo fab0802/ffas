@@ -4,11 +4,11 @@ import type { NewsItem } from "@/types/news";
 const stubNews: NewsItem[] = [
   {
     slug: "gruendungsversammlung-2026",
-    category: "Vereinsleben",
+    category: "FFAS",
     date: "2026-04-28",
     title: "Wir sind da. Die Gründungsversammlung in zwölf Bildern.",
     excerpt:
-      "Über siebzig Frauen, ein Festzelt in Bonstetten, ein einstimmiger Beschluss — und ein Logo, an dem ein halbes Jahr gefeilt wurde. So wird ein Verein geboren.",
+      "Über siebzig Frauen, ein Festzelt in Bonstetten, ein einstimmiger Beschluss — und ein Logo, an dem ein halbes Jahr gefeilt wurde. So entsteht FFAS.",
     featured: true,
   },
   {

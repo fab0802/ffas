@@ -23,12 +23,12 @@ export const values: Value[] = [
     number: 4,
     title: "Spielfreude vor Etikette",
     description:
-      "Wir nehmen uns ernst, aber nicht zu wichtig. Die Leidenschaft fürs Spiel steht über jeder Hierarchie, jeder Tabelle und jedem Vereinslogo.",
+      "Wir nehmen uns ernst, aber nicht zu wichtig. Die Leidenschaft fürs Spiel steht über jeder Hierarchie, jeder Tabelle und jedem Klublogo.",
   },
   {
     number: 5,
     title: "Heimspiel im Säuliamt",
     description:
-      "Unsere Spielerinnen, Trainer:innen und Sponsoren kommen aus der Region. Wir sind keine Filiale eines Stadtvereins – wir sind das Säuliamt am Ball.",
+      "Unsere Spielerinnen, Trainer:innen und Sponsoren kommen aus der Region. Wir sind keine Filiale eines Stadtklubs – wir sind das Säuliamt am Ball.",
   },
 ];

@@ -1,5 +1,5 @@
 export type NewsCategory =
-  | "Vereinsleben"
+  | "FFAS"
   | "Juniorinnen"
   | "Sponsoring"
   | "Spielbericht";

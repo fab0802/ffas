@@ -16,10 +16,10 @@ export default function ManifestBlock() {
 
       <div className={styles.body}>
         <p className={styles.lead}>
-          FFAS ist keine Konkurrenz, sondern eine Vereinigung. Fünf Säuliämtler
-          Fussballvereine bündeln ihren Frauen- und Mädchenfussball auf einer
-          gemeinsamen Plattform — damit jedes Mädchen im Albis-Süd ein Team in
-          seiner Nähe findet, ohne dass ein einzelner Verein das alleine stemmen
+          FFAS ist keine Konkurrenz, sondern ein Zusammenschluss. Fünf
+          Säuliämtler Fussballvereine bündeln ihren Frauen- und Mädchenfussball
+          auf einer gemeinsamen Plattform — damit jedes Mädchen im Albis-Süd ein
+          seiner Nähe findet, ohne dass ein einzelner Klub das alleine stemmen
           muss.
         </p>
 

@@ -13,9 +13,9 @@ export default function StatutenBlock() {
           Reglement & <em>Trägerschaft</em>
         </h2>
         <p className={styles.lead}>
-          FFAS ist keine eigenständige Vereinsstruktur, sondern eine
-          Trägerschaft fünf bestehender Vereine. Die Zusammenarbeit ist in einer
-          gemeinsamen Vereinbarung festgehalten.
+          FFAS ist keine eigenständige Organisation, sondern eine Trägerschaft
+          fünf bestehender Vereine. Die Zusammenarbeit ist in einer gemeinsamen
+          Vereinbarung festgehalten.
         </p>
       </header>
 

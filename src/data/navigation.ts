@@ -3,7 +3,7 @@ import type { NavItem } from "@/types/navItem";
 export const mainNav: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Teams", href: "/teams" },
-  { label: "Verein", href: "/verein" },
+  { label: "FFAS", href: "/ffas" },
   { label: "Spielplan", href: "/spielplan" },
   { label: "News", href: "/news" },
   { label: "Kontakt", href: "/kontakt" },

@@ -23,8 +23,8 @@ export default function SponsorCard({
       <Image
         src={sponsor.logoSrc}
         alt={sponsor.name}
-        width={isHaupt ? 320 : 200}
-        height={isHaupt ? 100 : 70}
+        width={0}
+        height={0}
         className={styles.logo}
       />
     </a>

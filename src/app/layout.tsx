@@ -28,8 +28,7 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "FFAS — Frauenfussball Albis Süd",
-  description:
-    "Der Frauenfussballverein im Säuliamt. Fünf Vereine, eine Farbe.",
+  description: "Der Frauenfussball im Säuliamt. Fünf Vereine, eine Farbe.",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -63,6 +62,7 @@ export default function RootLayout({
   return (
     <html
       lang="de"
+      data-scroll-behavior="smooth"
       className={`${fraunces.variable} ${manrope.variable} ${jetbrains.variable}`}
     >
       <body>

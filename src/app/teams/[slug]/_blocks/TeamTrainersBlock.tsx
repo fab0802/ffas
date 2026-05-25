@@ -20,13 +20,19 @@ export default function TeamTrainersBlock({ team }: TeamTrainersBlockProps) {
         {trainers.map((trainer) => (
           <li key={trainer.slug} className={styles.card}>
             <div className={styles.photoWrap}>
-              <Image
-                src={trainer.image}
-                alt=""
-                fill
-                sizes="(max-width: 700px) 50vw, 220px"
-                className={styles.photo}
-              />
+              {trainer.image ? (
+                <Image
+                  src={trainer.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 700px) 50vw, 220px"
+                  className={styles.photo}
+                />
+              ) : (
+                <span className={styles.initials} aria-hidden="true">
+                  {`${trainer.firstName[0] ?? ""}${trainer.lastName[0] ?? ""}`.toUpperCase()}
+                </span>
+              )}
             </div>
             <div className={styles.text}>
               <p className={styles.role}>{trainer.role}</p>

@@ -12,7 +12,7 @@ export type AnchorNavProps = {
 
 export default function AnchorNav({ anchors }: AnchorNavProps) {
   return (
-    <nav className={styles.nav} aria-label="Sprungnavigation Vereinsseite">
+    <nav className={styles.nav} aria-label="FFAS — Sprungnavigation">
       <ol className={styles.list}>
         {anchors.map((anchor, i) => (
           <li key={anchor.id} className={styles.item}>

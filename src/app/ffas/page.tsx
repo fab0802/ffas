@@ -9,9 +9,9 @@ import LeitungBlock from "./_blocks/LeitungBlock";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Verein — FFAS",
+  title: "FFAS — Über uns",
   description:
-    "Über FFAS — die Vereinigung von fünf Säuliämtler Trägervereinen für den Frauen- und Mädchenfussball.",
+    "Über FFAS — der Zusammenschluss von fünf Säuliämtler Trägervereinen für den Frauen- und Mädchenfussball.",
 };
 
 const anchors = [
@@ -22,11 +22,11 @@ const anchors = [
   { id: "statuten", label: "Statuten" },
 ];
 
-export default function VereinPage() {
+export default function FfasPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Verein"
+        eyebrow="FFAS"
         title={
           <>
             Frauenfussball <em>Albis Süd</em>

@@ -5,7 +5,7 @@ export const stats: Stat[] = [
     slug: "gruendungsjahr",
     value: 2026,
     label: "Gründungsjahr",
-    sublabel: "der Vereinsfamilie",
+    sublabel: "der FFAS-Familie",
     featured: true,
   },
   {
@@ -22,9 +22,9 @@ export const stats: Stat[] = [
     sublabel: "auf dem Platz",
   },
   {
-    slug: "partnervereine",
+    slug: "traegervereine",
     value: 5,
-    label: "Partnervereine",
+    label: "Trägervereine",
     sublabel: "Für den Frauenfussball",
   },
 ];

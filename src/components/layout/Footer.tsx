@@ -35,8 +35,8 @@ export default async function Footer() {
           </div>
 
           {/* Gruppierung */}
-          <nav className={styles.column} aria-labelledby="footer-verein">
-            <h2 id="footer-verein" className={styles.heading}>
+          <nav className={styles.column} aria-labelledby="footer-ffas">
+            <h2 id="footer-ffas" className={styles.heading}>
               Gruppierung
             </h2>
             <ul className={styles.list}>
@@ -58,10 +58,10 @@ export default async function Footer() {
             </ul>
           </nav>
 
-          {/* Partnervereine */}
+          {/* Trägervereine */}
           <nav className={styles.column} aria-labelledby="footer-clubs">
             <h2 id="footer-clubs" className={styles.heading}>
-              Partnervereine
+              Trägervereine
             </h2>
             <ul className={styles.clubList}>
               {clubs.map((club) => {
