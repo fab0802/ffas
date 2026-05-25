@@ -1,0 +1,59 @@
+.block {
+  padding-top: var(--section-py, 4rem);
+  padding-bottom: var(--section-py, 4rem);
+}
+
+.header {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  max-width: 60ch;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin: 0;
+}
+
+.title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--pink);
+}
+
+.body {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 60ch;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.lead {
+  font-size: 1.25rem;
+  line-height: 1.55;
+  font-weight: 350;
+}
+
+.quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin: 1rem 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--pink);
+  max-width: 50ch;
+  color: color-mix(in srgb, var(--cream) 92%, var(--pink) 8%);
+}

@@ -1,0 +1,91 @@
+.block {
+  padding-top: var(--section-py, 4rem);
+  padding-bottom: var(--section-py, 4rem);
+  border-top: 1px solid color-mix(in srgb, var(--cream) 10%, transparent);
+}
+
+.header {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  max-width: 60ch;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin: 0;
+}
+
+.title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--pink);
+}
+
+.lead {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  margin: 0.5rem 0 0;
+  color: color-mix(in srgb, var(--cream) 85%, transparent);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1.5rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--cream) 12%, transparent);
+}
+
+.item:last-child {
+  border-bottom: 1px solid color-mix(in srgb, var(--cream) 12%, transparent);
+}
+
+.num {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: color-mix(in srgb, var(--cream) 50%, transparent);
+}
+
+.content {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.name {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.4rem, 3vw, 1.75rem);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.meta {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: color-mix(in srgb, var(--cream) 65%, transparent);
+  margin: 0;
+}

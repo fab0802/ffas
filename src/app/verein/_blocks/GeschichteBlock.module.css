@@ -1,0 +1,75 @@
+.block {
+  padding-top: var(--section-py, 4rem);
+  padding-bottom: var(--section-py, 4rem);
+  border-top: 1px solid color-mix(in srgb, var(--cream) 10%, transparent);
+}
+
+.header {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin: 0;
+}
+
+.title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--pink);
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  max-width: 70ch;
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--cream) 12%, transparent);
+  align-items: baseline;
+}
+
+.entry:last-child {
+  border-bottom: 1px solid color-mix(in srgb, var(--cream) 12%, transparent);
+}
+
+.year {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.75rem;
+  color: var(--pink);
+  line-height: 1;
+}
+
+.event {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+  .entry {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}

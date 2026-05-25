@@ -1,0 +1,85 @@
+.block {
+  padding-top: var(--section-py, 4rem);
+  padding-bottom: var(--section-py, 4rem);
+  border-top: 1px solid color-mix(in srgb, var(--cream) 10%, transparent);
+}
+
+.header {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  max-width: 60ch;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin: 0;
+}
+
+.title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--pink);
+}
+
+.lead {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  margin: 0.5rem 0 0;
+  color: color-mix(in srgb, var(--cream) 85%, transparent);
+}
+
+.download {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: color-mix(in srgb, var(--cream) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cream) 15%, transparent);
+  color: var(--cream);
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.download:hover {
+  background: color-mix(in srgb, var(--pink) 12%, transparent);
+  border-color: var(--pink);
+}
+
+.downloadIcon {
+  font-family: var(--mono);
+  font-size: 1.5rem;
+  color: var(--pink);
+  line-height: 1;
+}
+
+.downloadInfo {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.downloadLabel {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: color-mix(in srgb, var(--cream) 60%, transparent);
+}
+
+.downloadTitle {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+}

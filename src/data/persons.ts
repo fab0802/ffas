@@ -7,7 +7,6 @@ export const persons: Person[] = [
     lastName: "Müller",
     email: "anna.mueller@ffas.ch",
     phone: "+41 79 123 45 67",
-    image: "/images/persons/anna-mueller.jpg",
   },
   {
     slug: "sara-bachmann",
@@ -15,7 +14,6 @@ export const persons: Person[] = [
     lastName: "Bachmann",
     email: "sara.bachmann@ffas.ch",
     phone: "+41 79 234 56 78",
-    image: "/images/persons/sara-bachmann.jpg",
   },
   {
     slug: "lena-keller",
@@ -23,7 +21,6 @@ export const persons: Person[] = [
     lastName: "Keller",
     email: "lena.keller@ffas.ch",
     phone: "+41 78 345 67 89",
-    image: "/images/persons/lena-keller.jpg",
   },
   {
     slug: "nadia-frei",
@@ -31,7 +28,6 @@ export const persons: Person[] = [
     lastName: "Frei",
     email: "nadia.frei@ffas.ch",
     phone: "+41 79 456 78 90",
-    image: "/images/persons/nadia-frei.jpg",
   },
   {
     slug: "jasmin-huber",
@@ -39,7 +35,6 @@ export const persons: Person[] = [
     lastName: "Huber",
     email: "jasmin.huber@ffas.ch",
     phone: "+41 76 567 89 01",
-    image: "/images/persons/jasmin-huber.jpg",
   },
   {
     slug: "marco-steiner",
@@ -47,7 +42,6 @@ export const persons: Person[] = [
     lastName: "Steiner",
     email: "marco.steiner@ffas.ch",
     phone: "+41 79 678 90 12",
-    image: "/images/persons/marco-steiner.jpg",
   },
   {
     slug: "claudia-vogel",
@@ -55,7 +49,6 @@ export const persons: Person[] = [
     lastName: "Vogel",
     email: "claudia.vogel@ffas.ch",
     phone: "+41 78 789 01 23",
-    image: "/images/persons/claudia-vogel.jpg",
   },
   {
     slug: "tina-rohner",
@@ -63,6 +56,5 @@ export const persons: Person[] = [
     lastName: "Rohner",
     email: "tina.rohner@ffas.ch",
     phone: "+41 79 890 12 34",
-    image: "/images/persons/tina-rohner.jpg",
   },
 ];

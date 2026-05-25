@@ -4,5 +4,5 @@ export type Person = {
   lastName: string;
   email: string;
   phone: string;
-  image: string;
+  image?: string;
 };

@@ -1,0 +1,125 @@
+.block {
+  padding-top: var(--section-py, 4rem);
+  padding-bottom: var(--section-py, 4rem);
+  border-top: 1px solid color-mix(in srgb, var(--cream) 10%, transparent);
+}
+
+.header {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  max-width: 60ch;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin: 0;
+}
+
+.title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--pink);
+}
+
+.lead {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  margin: 0.5rem 0 0;
+  color: color-mix(in srgb, var(--cream) 85%, transparent);
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem 1.5rem;
+}
+
+.card {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--pink) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--pink) 40%, transparent);
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.initials {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 3.5rem;
+  color: var(--pink);
+  line-height: 1;
+}
+
+.info {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.role {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--cream) 60%, transparent);
+  margin: 0;
+}
+
+.name {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.contacts {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.contactLink {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--cream) 80%, transparent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  word-break: break-all;
+}
+
+.contactLink:hover {
+  color: var(--pink);
+}

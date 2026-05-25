@@ -18,6 +18,9 @@
   --serif: var(--font-fraunces), "Times New Roman", serif;
   --sans: var(--font-manrope), -apple-system, sans-serif;
   --mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  /* ─── Heights ─── */
+  --nav-height: 100px;
 }
 
 * {
@@ -52,4 +55,10 @@ body::before {
 ::selection {
   background: var(--pink);
   color: var(--navy);
+}
+
+@media (max-width: 880px) {
+  :root {
+    --nav-height: 92px;
+  }
 }
