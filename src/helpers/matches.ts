@@ -1,4 +1,4 @@
-import { getMatches } from "@/data/matches";
+import { getMatches } from "./matchesProvider";
 import { teams } from "@/data/teams";
 import { getLocationBySlug } from "./locations";
 import type { Match } from "@/types/match";
@@ -90,4 +90,62 @@ export function getFfasResult(match: Match): FfasResult | undefined {
   const outcome: FfasResult["outcome"] =
     ffas > opponent ? "win" : ffas < opponent ? "loss" : "draw";
   return { ffas, opponent, outcome };
+}
+
+const FEATURED_TEAM_PRIORITY: readonly string[] = ["frauen-1", "frauen-2"];
+
+/**
+ * Featured-Match für die Hero-Card: erst nächstes Frauen-1-Spiel,
+ * wenn keines da, Frauen-2, sonst nächstes Match eines beliebigen Teams.
+ */
+export async function getFeaturedMatch(): Promise<Match | undefined> {
+  const matches = await getMatches();
+  const today = new Date().toISOString().slice(0, 10);
+  const upcoming = matches
+    .filter((m) => m.date >= today)
+    .sort((a, b) => {
+      if (a.date !== b.date) return a.date.localeCompare(b.date);
+      return (a.time ?? "").localeCompare(b.time ?? "");
+    });
+
+  for (const slug of FEATURED_TEAM_PRIORITY) {
+    const match = upcoming.find((m) => m.teamSlug === slug);
+    if (match) return match;
+  }
+
+  return upcoming[0];
+}
+
+/**
+ * Alle Matches in den nächsten N Tagen ab heute (inkl. heute),
+ * chronologisch sortiert. Schliesst optional ein bestimmtes Match aus
+ * (z.B. das featured-Match, das schon in der Hero-Card erscheint).
+ */
+export async function getMatchesInNextDays(
+  days: number,
+  excludeMatch?: Match,
+): Promise<Match[]> {
+  const matches = await getMatches();
+  const today = new Date();
+  const todayIso = today.toISOString().slice(0, 10);
+  const limit = new Date(today);
+  limit.setDate(today.getDate() + days);
+  const limitIso = limit.toISOString().slice(0, 10);
+
+  return matches
+    .filter((m) => m.date >= todayIso && m.date <= limitIso)
+    .filter((m) => {
+      if (!excludeMatch) return true;
+      // Bevorzugt matchNumber-Vergleich (eindeutig); sonst date+teamSlug
+      if (excludeMatch.matchNumber && m.matchNumber) {
+        return m.matchNumber !== excludeMatch.matchNumber;
+      }
+      return !(
+        m.date === excludeMatch.date && m.teamSlug === excludeMatch.teamSlug
+      );
+    })
+    .sort((a, b) => {
+      if (a.date !== b.date) return a.date.localeCompare(b.date);
+      return (a.time ?? "").localeCompare(b.time ?? "");
+    });
 }

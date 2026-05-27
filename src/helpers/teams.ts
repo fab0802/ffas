@@ -62,3 +62,21 @@ export function getAdjacentTeams(currentSlug: string): {
     next: index < teams.length - 1 ? teams[index + 1] : undefined,
   };
 }
+
+/**
+ * Lesbarer Display-Name eines FFAS-Teams (im Match-Kontext, unter dem Crest).
+ * "Aktive 1", "Juniorinnen D9a"
+ */
+export function getMatchTeamDisplayName(team: Team): string {
+  return team.emphasis ? `${team.name} ${team.emphasis}` : team.name;
+}
+
+/**
+ * Kurz-Identifier für den Crest eines FFAS-Teams.
+ * Bei den Aktiven nur die Zahl, bei Juniorinnen die emphasis (z.B. "D9a", "C", "Ea").
+ * Fällt zurück auf die ersten 2 Zeichen des Namens, wenn keine emphasis.
+ */
+export function getMatchTeamCrestLabel(team: Team): string {
+  if (team.emphasis) return team.emphasis;
+  return team.name.slice(0, 2).toUpperCase();
+}

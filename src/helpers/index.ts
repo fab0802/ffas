@@ -10,3 +10,4 @@ export * from "./locations";
 export * from "./clubs";
 export * from "./teams";
 export * from "./trainings";
+export * from "./matchesProvider";

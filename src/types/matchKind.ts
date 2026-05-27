@@ -1,1 +1,1 @@
-export type MatchKind = "Meisterschaft" | "Cup" | "Testspiel";
+export type MatchKind = "Meisterschaft" | "Cup" | "Testspiel" | "Turnier";

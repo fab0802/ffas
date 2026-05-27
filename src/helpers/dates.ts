@@ -76,3 +76,22 @@ export function formatDateShortUpper(isoDate: string): string {
   const month = MONTHS_LONG[date.getMonth()].toUpperCase();
   return `${day}. ${month}`;
 }
+
+const WEEKDAYS_SHORT = ["SO", "MO", "DI", "MI", "DO", "FR", "SA"] as const;
+
+/**
+ * Format: "SA 30.05."  (Wochentag-Abkürzung + Tag.Monat. ohne Jahr)
+ */
+export function formatDateWithWeekday(isoDate: string): string {
+  // isoDate = "YYYY-MM-DD"
+  const [yyyy, mm, dd] = isoDate.split("-").map((n) => parseInt(n, 10));
+  if (!yyyy || !mm || !dd) return isoDate;
+
+  // Date in lokaler Zeit, UTC vermeiden (sonst Tag-Verschiebung)
+  const date = new Date(yyyy, mm - 1, dd);
+  const weekday = WEEKDAYS_SHORT[date.getDay()];
+
+  const ddStr = String(dd).padStart(2, "0");
+  const mmStr = String(mm).padStart(2, "0");
+  return `${weekday} ${ddStr}.${mmStr}.`;
+}
