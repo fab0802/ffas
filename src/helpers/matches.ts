@@ -184,3 +184,14 @@ export function groupMatchesByDay(matches: Match[]): MatchDayGroup[] {
     }))
     .sort((a, b) => a.date.localeCompare(b.date));
 }
+
+export function getMatchStatusLabel(match: Match): string | undefined {
+  switch (match.status) {
+    case "Nullwertung":
+      return "Abgesagt";
+    case "Verschoben":
+      return "Verschoben";
+    default:
+      return undefined;
+  }
+}

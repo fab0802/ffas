@@ -2,6 +2,7 @@ import ICAL from "ical.js";
 import type { Match } from "@/types/match";
 import type { MatchKind } from "@/types/matchKind";
 import { resolveLocationSlug } from "@/data/footballChVenueToLocationSlug";
+import { matchStatusOverrides } from "@/data/cancelledMatches";
 
 const FFAS_VEREIN_NAMES = [
   "FC Hausen",
@@ -291,6 +292,8 @@ export function parseFootballChIcal(
     const locationSlug = home ? resolveLocationSlug(location) : undefined;
     const venueText = locationSlug ? undefined : location || undefined;
 
+    const status = matchNumber ? matchStatusOverrides[matchNumber] : undefined;
+
     matches.push({
       date,
       time,
@@ -302,6 +305,7 @@ export function parseFootballChIcal(
       matchNumber,
       locationSlug,
       venueText,
+      status,
     });
   }
 

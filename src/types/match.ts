@@ -1,4 +1,5 @@
 import type { MatchKind } from "./matchKind";
+import type { MatchStatus } from "./matchStatus";
 
 export type Match = {
   date: string;
@@ -18,4 +19,5 @@ export type Match = {
     home: number;
     away: number;
   };
+  status?: MatchStatus;
 };
