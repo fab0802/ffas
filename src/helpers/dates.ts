@@ -40,6 +40,16 @@ const MONTHS_SHORT = [
   "DEZ",
 ] as const;
 
+const WEEKDAYS_LONG = [
+  "Sonntag",
+  "Montag",
+  "Dienstag",
+  "Mittwoch",
+  "Donnerstag",
+  "Freitag",
+  "Samstag",
+] as const;
+
 /**
  * Parst "YYYY-MM-DD" ohne `new Date(isoString)` — das interpretiert
  * je nach Browser UTC und kann am Monatsrand einen Tag zurückspringen.
@@ -94,4 +104,17 @@ export function formatDateWithWeekday(isoDate: string): string {
   const ddStr = String(dd).padStart(2, "0");
   const mmStr = String(mm).padStart(2, "0");
   return `${weekday} ${ddStr}.${mmStr}.`;
+}
+
+/**
+ * Format: "Samstag, 30.05."  — für Tages-Gruppen-Header
+ */
+export function formatDayHeader(isoDate: string): string {
+  const [yyyy, mm, dd] = isoDate.split("-").map((n) => parseInt(n, 10));
+  if (!yyyy || !mm || !dd) return isoDate;
+  const date = new Date(yyyy, mm - 1, dd);
+  const weekday = WEEKDAYS_LONG[date.getDay()];
+  const ddStr = String(dd).padStart(2, "0");
+  const mmStr = String(mm).padStart(2, "0");
+  return `${weekday}, ${ddStr}.${mmStr}.`;
 }

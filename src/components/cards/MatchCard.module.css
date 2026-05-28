@@ -60,16 +60,31 @@
   font-style: italic;
   font-weight: 600;
   font-size: 30px;
+  overflow: hidden;
 }
 
-.home .crest {
+/* FFAS-Buchstaben-Fallback: pinker Kreis */
+.crestHighlight {
   background: var(--pink);
   color: var(--navy);
 }
 
-.away .crest {
+/* Gegner-Buchstaben-Fallback: dezenter Outline-Kreis */
+.crestPlain {
   border: 1.5px solid rgba(250, 246, 238, 0.3);
   color: var(--cream);
+}
+
+/* Logo-Variante: transparenter Hintergrund, Bild füllt den Kreis */
+.crestLogo {
+  background: transparent;
+  border: none;
+}
+
+.crestImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .name {

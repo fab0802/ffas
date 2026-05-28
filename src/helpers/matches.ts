@@ -3,6 +3,7 @@ import { teams } from "@/data/teams";
 import { getLocationBySlug } from "./locations";
 import type { Match } from "@/types/match";
 import type { Team } from "@/types/team";
+import type { MatchDayGroup } from "@/types/matchDayGroup";
 
 export function getTeamForMatch(match: Match): Team | undefined {
   return teams.find((t) => t.slug === match.teamSlug);
@@ -148,4 +149,38 @@ export async function getMatchesInNextDays(
       if (a.date !== b.date) return a.date.localeCompare(b.date);
       return (a.time ?? "").localeCompare(b.time ?? "");
     });
+}
+
+/**
+ * Gekürzter Venue-Name für kompakte Listen.
+ * Schneidet alles ab dem ersten " - " ab.
+ * "Flüeli, Winterthur - Platz 3 (Kunstrasen)" → "Flüeli, Winterthur"
+ */
+export function getShortVenueName(match: Match): string | undefined {
+  const full = getMatchVenueName(match);
+  if (!full) return undefined;
+  const dashIdx = full.indexOf(" - ");
+  return dashIdx === -1 ? full : full.substring(0, dashIdx).trim();
+}
+
+/**
+ * Gruppiert Matches nach Datum, chronologisch.
+ * Innerhalb eines Tages nach Zeit sortiert.
+ */
+export function groupMatchesByDay(matches: Match[]): MatchDayGroup[] {
+  const map = new Map<string, Match[]>();
+  for (const m of matches) {
+    const arr = map.get(m.date) ?? [];
+    arr.push(m);
+    map.set(m.date, arr);
+  }
+
+  return Array.from(map.entries())
+    .map(([date, dayMatches]) => ({
+      date,
+      matches: dayMatches.sort((a, b) =>
+        (a.time ?? "").localeCompare(b.time ?? ""),
+      ),
+    }))
+    .sort((a, b) => a.date.localeCompare(b.date));
 }

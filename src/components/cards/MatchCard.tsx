@@ -1,19 +1,19 @@
+import Image from "next/image";
 import {
   getTeamForMatch,
   getDisplayLeague,
   formatDateLong,
   getMatchVenueName,
   getMatchTeamDisplayName,
-  getMatchTeamCrestLabel,
+  getClubLogoUrl,
 } from "@/helpers";
 import type { Match } from "@/types/match";
 import styles from "./MatchCard.module.css";
 
 export type MatchCardProps = { match: Match };
 
-/**
- * Pill-Label oben rechts: kontextabhängig nach MatchKind.
- */
+const FFAS_LOGO_URL = "/ffas-logo-letters-only.svg";
+
 function getPillLabel(match: Match): string {
   switch (match.kind) {
     case "Meisterschaft":
@@ -27,20 +27,48 @@ function getPillLabel(match: Match): string {
   }
 }
 
-/**
- * Crest-Initialen aus dem Namen (max. 2 Zeichen).
- * "FC Dietikon" → "DI", "FFAS Frauen 1" → "FF"
- */
 function initials(name: string): string {
   const cleaned = name.replace(/^FC\s+|^SC\s+|^SV\s+/i, "").trim();
   const parts = cleaned.split(/\s+/);
   if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
-  // Bei mehreren Wörtern: erster Buchstabe jedes Wortes (max 3)
-  return parts
-    .slice(0, 3)
-    .map((p) => p[0])
-    .join("")
-    .toUpperCase();
+  return (parts[0][0] + parts[1][0]).toUpperCase();
+}
+
+/**
+ * Crest: zeigt ein Logo, falls verfügbar, sonst Buchstaben-Fallback.
+ */
+function Crest({
+  logoUrl,
+  fallbackLabel,
+  highlight,
+}: {
+  logoUrl: string | undefined;
+  fallbackLabel: string;
+  highlight: boolean;
+}) {
+  if (logoUrl) {
+    return (
+      <div className={`${styles.crest} ${styles.crestLogo}`}>
+        <Image
+          src={logoUrl}
+          alt=""
+          width={84}
+          height={84}
+          className={styles.crestImg}
+          unoptimized
+        />
+      </div>
+    );
+  }
+  return (
+    <div
+      className={`${styles.crest} ${
+        highlight ? styles.crestHighlight : styles.crestPlain
+      }`}
+    >
+      {fallbackLabel}
+    </div>
+  );
 }
 
 export default function MatchCard({ match }: MatchCardProps) {
@@ -49,7 +77,6 @@ export default function MatchCard({ match }: MatchCardProps) {
   const venueName = getMatchVenueName(match);
 
   const ffasName = team ? getMatchTeamDisplayName(team) : "FFAS";
-  const ffasCrest = team ? getMatchTeamCrestLabel(team) : "FF";
   const ffasSub = "Albis Süd";
 
   // ─── Turnier-Branch ──────────────────────────────────────────────────
@@ -101,15 +128,17 @@ export default function MatchCard({ match }: MatchCardProps) {
     );
   }
 
-  // ─── Reguläres Spiel (Meisterschaft / Cup / Testspiel) ───────────────
-  // Bei regulären Spielen ist opponent immer gesetzt — wir setzen einen Fallback,
-  // damit TypeScript glücklich ist.
+  // ─── Reguläres Spiel ─────────────────────────────────────────────────
   const opponent = match.opponent ?? "TBD";
 
   const homeName = match.home ? ffasName : opponent;
   const homeSub = match.home ? ffasSub : "Gast";
   const awayName = match.home ? opponent : ffasName;
   const awaySub = match.home ? "Gast" : ffasSub;
+
+  // Logo-URLs: FFAS-Seite kriegt das AS-Emblem, Gegner via Namens-Lookup
+  const homeLogoUrl = match.home ? FFAS_LOGO_URL : getClubLogoUrl(opponent);
+  const awayLogoUrl = match.home ? getClubLogoUrl(opponent) : FFAS_LOGO_URL;
 
   const dateLine = [
     formatDateLong(match.date),
@@ -126,17 +155,21 @@ export default function MatchCard({ match }: MatchCardProps) {
 
       <div className={styles.teams}>
         <div className={`${styles.team} ${styles.home}`}>
-          <div className={styles.crest}>
-            {match.home ? ffasCrest : initials(homeName)}
-          </div>{" "}
+          <Crest
+            logoUrl={homeLogoUrl}
+            fallbackLabel={initials(homeName)}
+            highlight={match.home}
+          />
           <div className={styles.name}>{homeName}</div>
           <div className={styles.sub}>{homeSub}</div>
         </div>
         <div className={styles.vs}>VS</div>
         <div className={`${styles.team} ${styles.away}`}>
-          <div className={styles.crest}>
-            {match.home ? initials(awayName) : ffasCrest}+{" "}
-          </div>{" "}
+          <Crest
+            logoUrl={awayLogoUrl}
+            fallbackLabel={initials(awayName)}
+            highlight={!match.home}
+          />
           <div className={styles.name}>{awayName}</div>
           <div className={styles.sub}>{awaySub}</div>
         </div>
