@@ -3,28 +3,7 @@ import type { Match } from "@/types/match";
 import type { MatchKind } from "@/types/matchKind";
 import { resolveLocationSlug } from "@/data/footballChVenueToLocationSlug";
 import { matchStatusOverrides } from "@/data/cancelledMatches";
-
-const FFAS_VEREIN_NAMES = [
-  "FC Hausen",
-  "FC Knonau-Mettmenstetten",
-  "Sportclub Hedingen",
-  "FC Wettswil-Bonstetten",
-  "FC Uitikon",
-  // Falls football.ch kürzere Namen verwendet, hier ergänzen.
-  "Hausen a/A",
-  "KMO",
-  "Hedingen",
-  "FCWB",
-  "Uitikon",
-];
-
-/**
- * Erkennt, ob ein Team-Name zu einem FFAS-Trägerverein gehört.
- */
-function isFfasTeam(teamName: string): boolean {
-  const lower = teamName.toLowerCase();
-  return FFAS_VEREIN_NAMES.some((name) => lower.includes(name.toLowerCase()));
-}
+import { isFfasClub } from "@/data/ffasClubNames";
 
 /**
  * Entfernt Liga-Suffixe wie "(4.L(F))" oder Team-Nummern wie "1" am Ende.
@@ -51,7 +30,12 @@ function cleanTeamName(name: string): string {
   }
 
   // Trailing Unterstrich(e) entfernen: "FC Horgen a_" → "FC Horgen a"
-  return result.replace(/_+$/, "").trim();
+  result = result.replace(/_+$/, "").trim();
+
+  // 3. Junioren-Suffix wie " D/7" oder " E/4" entfernen (z.B. bei "Zug 94 D/7")
+  result = result.replace(/\s+[A-Z]\/\d+$/, "").trim();
+
+  return result;
 }
 
 /**
@@ -283,8 +267,8 @@ export function parseFootballChIcal(
     const teams = parseSummary(summary);
     if (!teams) continue;
 
-    const aIsFfas = isFfasTeam(teams.teamA);
-    const bIsFfas = isFfasTeam(teams.teamB);
+    const aIsFfas = isFfasClub(teams.teamA);
+    const bIsFfas = isFfasClub(teams.teamB);
     if (!aIsFfas && !bIsFfas) continue;
 
     const home = aIsFfas;

@@ -1,0 +1,155 @@
+.card {
+  background: rgba(250, 246, 238, 0.03);
+  border: 1px solid rgba(237, 147, 177, 0.15);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition:
+    border-color 0.2s,
+    background-color 0.2s;
+}
+
+.card:hover {
+  border-color: rgba(237, 147, 177, 0.35);
+  background: rgba(250, 246, 238, 0.05);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.time {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--pink);
+}
+
+.kindLabel {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 238, 0.4);
+}
+
+.statusBadge {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pink);
+  border: 1px solid var(--pink);
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+/* Matchup-Zeile */
+.matchup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 36px;
+}
+
+.crest {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 12px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.crestLogo {
+  background: transparent;
+}
+
+.crestImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.crestHighlight {
+  background: var(--pink);
+  color: var(--navy);
+}
+
+.crestPlain {
+  border: 1px solid rgba(250, 246, 238, 0.2);
+  color: var(--cream);
+}
+
+.vs {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: rgba(250, 246, 238, 0.5);
+}
+
+.opponentName {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+/* Turnier-Block: zweizeiliger Titel + Organisator */
+.tournamentBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.tournamentTitle {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.organizerText {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: rgba(250, 246, 238, 0.5);
+}
+
+/* Footer */
+.venue {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 238, 0.45);
+  padding-top: 6px;
+  border-top: 1px solid rgba(237, 147, 177, 0.1);
+}
+
+/* Abgesagt */
+.cancelled {
+  opacity: 0.45;
+}
+
+.cancelled .opponentName {
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--cream) 40%, transparent);
+}
+
+.cancelled .statusBadge {
+  opacity: 1;
+}

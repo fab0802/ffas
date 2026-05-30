@@ -5,7 +5,6 @@ import type { Match } from "@/types/match";
 import type { Team } from "@/types/team";
 import type { MatchDayGroup } from "@/types/matchDayGroup";
 
-const MAX_DAYS_HOMEPAGE = 2;
 const MAX_SECOND_DAY_MATCHES = 8;
 
 export function getTeamForMatch(match: Match): Team | undefined {
@@ -249,4 +248,19 @@ export function limitGroupsForHomepage(
   }
 
   return result;
+}
+
+/**
+ * Alle künftigen Matches ab heute, chronologisch sortiert.
+ * (Im Gegensatz zu getMatchesInNextDays ohne Zeitlimit.)
+ */
+export async function getAllUpcomingMatches(): Promise<Match[]> {
+  const matches = await getMatches();
+  const today = new Date().toISOString().slice(0, 10);
+  return matches
+    .filter((m) => m.date >= today)
+    .sort((a, b) => {
+      if (a.date !== b.date) return a.date.localeCompare(b.date);
+      return (a.time ?? "").localeCompare(b.time ?? "");
+    });
 }
