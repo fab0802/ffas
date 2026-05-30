@@ -4,6 +4,7 @@ import {
   getFeaturedMatch,
   getMatchesInNextDays,
   groupMatchesByDay,
+  limitGroupsForHomepage,
   getTeamForMatch,
   getMatchTeamCrestLabel,
   getShortVenueName,
@@ -13,15 +14,16 @@ import {
 import styles from "./NextMatchSection.module.css";
 
 const NEXT_DAYS_WINDOW = 7;
-const MAX_MATCHES_HOMEPAGE = 5;
 
 export default async function NextMatchSection() {
   const featured = await getFeaturedMatch();
   const allUpcoming = await getMatchesInNextDays(NEXT_DAYS_WINDOW, featured);
 
-  const limited = allUpcoming.slice(0, MAX_MATCHES_HOMEPAGE);
-  const groups = groupMatchesByDay(limited);
-  const hasMore = allUpcoming.length > MAX_MATCHES_HOMEPAGE;
+  const allGroups = groupMatchesByDay(allUpcoming);
+  const groups = limitGroupsForHomepage(allGroups);
+  const shownCount = groups.reduce((n, g) => n + g.matches.length, 0);
+  const totalCount = allUpcoming.length;
+  const hasMore = totalCount > shownCount;
 
   return (
     <section className={styles.section} id="spielplan">
@@ -80,7 +82,7 @@ export default async function NextMatchSection() {
 
             {hasMore && (
               <Link href="/spielplan" className={styles.moreLink}>
-                Alle Spiele →
+                Alle {totalCount} Spiele →
               </Link>
             )}
           </div>

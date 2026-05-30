@@ -5,6 +5,9 @@ import type { Match } from "@/types/match";
 import type { Team } from "@/types/team";
 import type { MatchDayGroup } from "@/types/matchDayGroup";
 
+const MAX_DAYS_HOMEPAGE = 2;
+const MAX_SECOND_DAY_MATCHES = 8;
+
 export function getTeamForMatch(match: Match): Team | undefined {
   return teams.find((t) => t.slug === match.teamSlug);
 }
@@ -195,4 +198,55 @@ export function getMatchStatusLabel(match: Match): string | undefined {
     default:
       return undefined;
   }
+}
+
+/**
+ * Limitiert eine Liste von Tages-Gruppen so, dass nur ganze Tage gezeigt werden.
+ *
+ * Regel:
+ * - Erster Tag wird IMMER ganz mitgenommen (auch wenn er das Limit überschreitet)
+ * - Weitere Tage kommen dazu, solange die Gesamtanzahl das Limit nicht überschreitet
+ */
+export function limitGroupsByWholeDay(
+  groups: MatchDayGroup[],
+  maxMatches: number,
+): MatchDayGroup[] {
+  if (groups.length === 0) return [];
+
+  const result: MatchDayGroup[] = [groups[0]];
+  let count = groups[0].matches.length;
+
+  for (let i = 1; i < groups.length; i++) {
+    const next = groups[i];
+    if (count + next.matches.length > maxMatches) break;
+    result.push(next);
+    count += next.matches.length;
+  }
+
+  return result;
+}
+
+/**
+ * Limitiert Tages-Gruppen für die Homepage-Vorschau.
+ *
+ * Regel:
+ * - Erster Tag immer mitnehmen (unabhängig von der Anzahl Spiele)
+ * - Zweiter Tag nur mitnehmen, wenn er nicht zu riesig ist (≤ MAX_SECOND_DAY_MATCHES)
+ * - Maximal 2 Tage
+ */
+export function limitGroupsForHomepage(
+  groups: MatchDayGroup[],
+): MatchDayGroup[] {
+  if (groups.length === 0) return [];
+
+  const result: MatchDayGroup[] = [groups[0]];
+
+  if (
+    groups.length >= 2 &&
+    groups[1].matches.length <= MAX_SECOND_DAY_MATCHES
+  ) {
+    result.push(groups[1]);
+  }
+
+  return result;
 }
