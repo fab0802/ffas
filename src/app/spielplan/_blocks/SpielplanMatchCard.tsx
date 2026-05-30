@@ -2,6 +2,7 @@ import Image from "next/image";
 import {
   getTeamForMatch,
   getMatchTeamCrestLabel,
+  getMatchTeamDisplayName,
   getShortVenueName,
   getMatchStatusLabel,
   getClubLogoUrl,
@@ -71,6 +72,7 @@ function Crest({
 export default function SpielplanMatchCard({ match }: SpielplanMatchCardProps) {
   const team = getTeamForMatch(match);
   const teamLabel = team ? getMatchTeamCrestLabel(team) : "";
+  const teamDisplayName = team ? getMatchTeamDisplayName(team) : "";
   const venue = getShortVenueName(match);
   const statusLabel = getMatchStatusLabel(match);
   const isCancelled = match.status === "Nullwertung";
@@ -116,7 +118,15 @@ export default function SpielplanMatchCard({ match }: SpielplanMatchCardProps) {
     >
       {/* Header: Zeit + Kind/Status */}
       <div className={styles.header}>
-        <span className={styles.time}>{timeDisplay}</span>
+        <div className={styles.headerLeft}>
+          <span className={styles.time}>{timeDisplay}</span>
+          {teamDisplayName && (
+            <>
+              <span className={styles.headerSep}>·</span>
+              <span className={styles.teamName}>{teamDisplayName}</span>
+            </>
+          )}
+        </div>{" "}
         {statusLabel ? (
           <span className={styles.statusBadge}>{statusLabel}</span>
         ) : (
