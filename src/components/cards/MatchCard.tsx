@@ -143,12 +143,7 @@ export default function MatchCard({ match }: MatchCardProps) {
   const homeLogoUrl = match.home ? FFAS_LOGO_URL : getClubLogoUrl(opponent);
   const awayLogoUrl = match.home ? getClubLogoUrl(opponent) : FFAS_LOGO_URL;
 
-  const dateLine = [
-    formatDateLong(match.date),
-    match.time,
-    match.home && venueName ? venueName : undefined,
-    !match.home ? "Auswärts" : undefined,
-  ]
+  const dateLine = [formatDateLong(match.date), match.time, venueName]
     .filter(Boolean)
     .join(" · ");
 

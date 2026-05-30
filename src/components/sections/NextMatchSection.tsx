@@ -52,7 +52,9 @@ export default async function NextMatchSection() {
                       match.kind === "Turnier"
                         ? `${teamLabel} · ${match.tournamentTitle ?? "Turnier"}`
                         : match.opponent
-                          ? `${teamLabel} · ${match.opponent}`
+                          ? match.home
+                            ? `${teamLabel} · ${match.opponent}`
+                            : `${match.opponent} · ${teamLabel}`
                           : teamLabel;
 
                     return (
