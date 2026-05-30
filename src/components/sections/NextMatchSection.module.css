@@ -131,6 +131,44 @@
   opacity: 0.65;
 }
 
+/* Abgesagte Spiele: ausgegraut */
+.cancelled {
+  opacity: 0.45;
+}
+
+.cancelled .opp {
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--cream) 40%, transparent);
+}
+
+.cancelled:hover {
+  /* Hover-Animation für abgesagte Spiele unterdrücken */
+  padding-left: 0;
+  color: inherit;
+}
+
+/* Status-Badge */
+.statusBadge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pink);
+  border: 1px solid var(--pink);
+  border-radius: 999px;
+  padding: 0.1rem 0.45rem;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.cancelled .statusBadge {
+  text-decoration: none;
+  opacity: 1;
+}
+
 /* ── Rechte Spalte: Card ─────────────────────────────── */
 
 .cardWrap {

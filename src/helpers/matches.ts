@@ -104,6 +104,7 @@ export async function getFeaturedMatch(): Promise<Match | undefined> {
   const today = new Date().toISOString().slice(0, 10);
   const upcoming = matches
     .filter((m) => m.date >= today)
+    .filter((M) => M.status !== "Nullwertung")
     .sort((a, b) => {
       if (a.date !== b.date) return a.date.localeCompare(b.date);
       return (a.time ?? "").localeCompare(b.time ?? "");

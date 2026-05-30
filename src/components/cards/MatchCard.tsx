@@ -6,6 +6,7 @@ import {
   getMatchVenueName,
   getMatchTeamDisplayName,
   getClubLogoUrl,
+  getMatchStatusLabel,
 } from "@/helpers";
 import type { Match } from "@/types/match";
 import styles from "./MatchCard.module.css";
@@ -130,6 +131,8 @@ export default function MatchCard({ match }: MatchCardProps) {
 
   // ─── Reguläres Spiel ─────────────────────────────────────────────────
   const opponent = match.opponent ?? "TBD";
+  const statusLabel = getMatchStatusLabel(match);
+  const isCancelled = match.status === "Nullwertung";
 
   const homeName = match.home ? ffasName : opponent;
   const homeSub = match.home ? ffasSub : "Gast";
@@ -150,9 +153,13 @@ export default function MatchCard({ match }: MatchCardProps) {
     .join(" · ");
 
   return (
-    <article className={styles.card} data-pill={getPillLabel(match)}>
+    <article
+      className={`${styles.card} ${isCancelled ? styles.cancelled : ""}`}
+      data-pill={getPillLabel(match)}
+    >
+      {" "}
       <div className={styles.date}>{dateLine}</div>
-
+      {statusLabel && <div className={styles.statusBadge}>{statusLabel}</div>}
       <div className={styles.teams}>
         <div className={`${styles.team} ${styles.home}`}>
           <Crest
@@ -174,7 +181,6 @@ export default function MatchCard({ match }: MatchCardProps) {
           <div className={styles.sub}>{awaySub}</div>
         </div>
       </div>
-
       <div className={styles.info}>
         <span>
           Wettbewerb

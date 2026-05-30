@@ -168,6 +168,37 @@
   color: color-mix(in srgb, var(--cream) 60%, transparent);
 }
 
+/* Abgesagte Karte: leicht ausgegraut */
+.cancelled {
+  opacity: 0.6;
+}
+
+.cancelled .teams .name {
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--cream) 40%, transparent);
+}
+
+/* Status-Badge in der Card */
+.statusBadge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pink);
+  border: 1px solid var(--pink);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.cancelled .statusBadge {
+  opacity: 1;
+}
+
 @media (max-width: 880px) {
   .card {
     padding: 36px 24px;

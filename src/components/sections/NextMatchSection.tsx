@@ -8,6 +8,7 @@ import {
   getMatchTeamCrestLabel,
   getShortVenueName,
   formatDayHeader,
+  getMatchStatusLabel,
 } from "@/helpers";
 import styles from "./NextMatchSection.module.css";
 
@@ -27,7 +28,7 @@ export default async function NextMatchSection() {
       <div className={styles.text}>
         <div className={styles.eyebrow}>Nächste Spiele</div>
         <h2 className={styles.title}>
-          Diese <em>Woche</em>
+          Der <em>Spielplan</em>
         </h2>
 
         {groups.length > 0 ? (
@@ -42,6 +43,8 @@ export default async function NextMatchSection() {
                     const team = getTeamForMatch(match);
                     const teamLabel = team ? getMatchTeamCrestLabel(team) : "";
                     const venue = getShortVenueName(match);
+                    const statusLabel = getMatchStatusLabel(match);
+                    const isCancelled = match.status === "Nullwertung";
 
                     const middleLabel =
                       match.kind === "Turnier"
@@ -56,10 +59,17 @@ export default async function NextMatchSection() {
                           match.matchNumber ??
                           `${match.teamSlug}-${match.date}-${match.time ?? ""}`
                         }
-                        className={styles.row}
+                        className={`${styles.row} ${isCancelled ? styles.cancelled : ""}`}
                       >
                         <span className={styles.time}>{match.time ?? ""}</span>
-                        <span className={styles.opp}>{middleLabel}</span>
+                        <span className={styles.opp}>
+                          {middleLabel}
+                          {statusLabel && (
+                            <span className={styles.statusBadge}>
+                              {statusLabel}
+                            </span>
+                          )}
+                        </span>{" "}
                         <span className={styles.loc}>{venue ?? ""}</span>
                       </li>
                     );
