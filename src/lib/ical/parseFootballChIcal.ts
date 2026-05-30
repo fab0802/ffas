@@ -32,23 +32,26 @@ function isFfasTeam(teamName: string): boolean {
  */
 function cleanTeamName(name: string): string {
   const trimmed = name.trim();
-  if (!trimmed.endsWith(")")) return trimmed;
+  // Erst Klammer-Suffix entfernen, dann Trailing Unterstrich (football.ch-Datenfehler)
+  let result = trimmed;
 
-  // Finde von rechts die öffnende Klammer, die zum letzten ")" passt
-  let depth = 0;
-  for (let i = trimmed.length - 1; i >= 0; i--) {
-    const ch = trimmed[i];
-    if (ch === ")") depth++;
-    else if (ch === "(") {
-      depth--;
-      if (depth === 0) {
-        // Diese "(" ist der Anfang des Klammer-Blocks am Ende
-        return trimmed.substring(0, i).trim();
+  if (result.endsWith(")")) {
+    let depth = 0;
+    for (let i = result.length - 1; i >= 0; i--) {
+      const ch = result[i];
+      if (ch === ")") depth++;
+      else if (ch === "(") {
+        depth--;
+        if (depth === 0) {
+          result = result.substring(0, i).trim();
+          break;
+        }
       }
     }
   }
 
-  return trimmed;
+  // Trailing Unterstrich(e) entfernen: "FC Horgen a_" → "FC Horgen a"
+  return result.replace(/_+$/, "").trim();
 }
 
 /**
