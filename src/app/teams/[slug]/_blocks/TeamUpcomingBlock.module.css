@@ -39,7 +39,7 @@
   color: var(--pink);
 }
 
-.opponent {
+.title {
   font-family: var(--serif);
   font-style: italic;
   font-size: 1.1rem;
@@ -60,17 +60,17 @@
   color: color-mix(in srgb, var(--cream) 85%, transparent);
 }
 
-/* Abgesagte Spiele: ausgegraut */
+/* Abgesagte Zeilen: ausgegraut */
 .cancelled {
   opacity: 0.45;
 }
 
-.cancelled .opponent {
+.cancelled .title {
   text-decoration: line-through;
   text-decoration-color: color-mix(in srgb, var(--cream) 40%, transparent);
 }
 
-/* Status-Badge (Abgesagt / Verschoben) */
+/* Status-Badge (Abgesagt / Verschoben) — für Matches */
 .statusBadge {
   display: inline-block;
   margin-left: 0.75rem;
@@ -93,20 +93,37 @@
   opacity: 1;
 }
 
+/* Event-Kategorie-Badge (visuell identisch zu Status-Badge) */
+.categoryBadge {
+  display: inline-block;
+  margin-left: 0.75rem;
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pink);
+  border: 1px solid var(--pink);
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
 @media (max-width: 700px) {
   .row {
     grid-template-columns: 1fr auto;
     grid-template-areas:
       "date date"
-      "opponent time"
+      "title time"
       "venue venue";
     gap: 0.5rem;
   }
   .date {
     grid-area: date;
   }
-  .opponent {
-    grid-area: opponent;
+  .title {
+    grid-area: title;
   }
   .venue {
     grid-area: venue;

@@ -51,6 +51,37 @@ const WEEKDAYS_LONG = [
 ] as const;
 
 /**
+ * Formatiert ein einzelnes Datum oder einen Bereich für Listen-Zeilen.
+ * "2026-06-21" → "21. JUN 2026"
+ * "2026-07-04" + "2026-07-06" → "04. – 06. JUL 2026"
+ * "2026-07-30" + "2026-08-02" → "30. JUL – 02. AUG 2026"
+ */
+export function formatDateRangeUpper(date: string, endDate?: string): string {
+  const [yyyy, mm, dd] = date.split("-").map((n) => parseInt(n, 10));
+  if (!yyyy || !mm || !dd) return date;
+
+  const dayStr = String(dd).padStart(2, "0");
+
+  if (!endDate) {
+    return `${dayStr}. ${MONTHS_SHORT[mm - 1]} ${yyyy}`;
+  }
+
+  const [eyyyy, emm, edd] = endDate.split("-").map((n) => parseInt(n, 10));
+  const eDayStr = String(edd).padStart(2, "0");
+
+  if (yyyy === eyyyy && mm === emm) {
+    // Gleicher Monat: "04. – 06. JUL 2026"
+    return `${dayStr}. – ${eDayStr}. ${MONTHS_SHORT[mm - 1]} ${yyyy}`;
+  }
+  if (yyyy === eyyyy) {
+    // Gleiches Jahr, anderer Monat: "30. JUL – 02. AUG 2026"
+    return `${dayStr}. ${MONTHS_SHORT[mm - 1]} – ${eDayStr}. ${MONTHS_SHORT[emm - 1]} ${yyyy}`;
+  }
+  // Verschiedene Jahre: kommt selten vor, aber lieber sauber abhandeln
+  return `${dayStr}. ${MONTHS_SHORT[mm - 1]} ${yyyy} – ${eDayStr}. ${MONTHS_SHORT[emm - 1]} ${eyyyy}`;
+}
+
+/**
  * Parst "YYYY-MM-DD" ohne `new Date(isoString)` — das interpretiert
  * je nach Browser UTC und kann am Monatsrand einen Tag zurückspringen.
  */

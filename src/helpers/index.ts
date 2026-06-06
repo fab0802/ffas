@@ -13,3 +13,4 @@ export * from "./trainings";
 export * from "./matchesProvider";
 export * from "./clubLogos";
 export * from "./ffasEvents";
+export * from "./timeline";
