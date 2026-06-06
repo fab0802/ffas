@@ -7,6 +7,7 @@ import TeamsSection from "@/components/sections/TeamsSection";
 import NextMatchSection from "@/components/sections/NextMatchSection";
 import NewsSection from "@/components/sections/NewsSection";
 import JoinCTA from "@/components/sections/JoinCTA";
+import NextEventsSection from "@/components/sections/NextEventsSection";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Manifesto />
       <TeamsSection />
       <NextMatchSection />
+      <NextEventsSection />
       <NewsSection />
       <JoinCTA />
     </main>

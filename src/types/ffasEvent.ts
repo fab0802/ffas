@@ -5,10 +5,12 @@ export type FfasEvent = {
   date: string;
   endDate?: string;
   time?: string;
+  endTime?: string;
   title: string;
   description?: string;
   locationSlug?: string;
   venueText?: string;
   category: FfasEventCategory;
   teamSlugs?: string[];
+  imageUrl?: string;
 };

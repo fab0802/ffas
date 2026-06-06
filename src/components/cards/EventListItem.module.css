@@ -1,0 +1,78 @@
+.row {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(237, 147, 177, 0.15);
+}
+
+.thumb {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.thumbImage {
+  object-fit: cover;
+}
+
+.thumbFallback {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--pink) 0%, var(--navy) 100%);
+}
+
+[data-category="Fest"] .thumbFallback {
+  background: linear-gradient(135deg, #ed93b1 0%, #2a2c5a 100%);
+}
+[data-category="Trainingslager"] .thumbFallback {
+  background: linear-gradient(135deg, #6a8470 0%, #2a2c5a 100%);
+}
+[data-category="Sitzung"] .thumbFallback {
+  background: linear-gradient(135deg, #6e6a9a 0%, #2a2c5a 100%);
+}
+[data-category="Kurs"] .thumbFallback {
+  background: linear-gradient(135deg, #c49a6c 0%, #2a2c5a 100%);
+}
+[data-category="Allgemein"] .thumbFallback {
+  background: linear-gradient(135deg, #4a4d7a 0%, #2a2c5a 100%);
+}
+
+.body {
+  min-width: 0;
+}
+
+.meta {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 4px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.date {
+  color: var(--pink);
+}
+
+.category {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: rgba(250, 246, 238, 0.4);
+}
+
+.title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+  text-wrap: balance;
+}

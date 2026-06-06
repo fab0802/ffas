@@ -1,0 +1,134 @@
+.card {
+  background: rgba(250, 246, 238, 0.03);
+  border: 1px solid rgba(237, 147, 177, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    border-color 0.2s,
+    background-color 0.2s;
+}
+
+.card:hover {
+  border-color: rgba(237, 147, 177, 0.35);
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.bannerImage {
+  object-fit: cover;
+}
+
+.bannerFallback {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--pink) 0%, var(--navy) 100%);
+}
+
+/* Kategorie-spezifische Fallback-Verläufe */
+[data-category="Fest"] .bannerFallback {
+  background: linear-gradient(135deg, #ed93b1 0%, #2a2c5a 100%);
+}
+[data-category="Trainingslager"] .bannerFallback {
+  background: linear-gradient(135deg, #6a8470 0%, #2a2c5a 100%);
+}
+[data-category="Sitzung"] .bannerFallback {
+  background: linear-gradient(135deg, #6e6a9a 0%, #2a2c5a 100%);
+}
+[data-category="Kurs"] .bannerFallback {
+  background: linear-gradient(135deg, #c49a6c 0%, #2a2c5a 100%);
+}
+[data-category="Allgemein"] .bannerFallback {
+  background: linear-gradient(135deg, #4a4d7a 0%, #2a2c5a 100%);
+}
+
+.categoryBadge {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: rgba(21, 22, 58, 0.7);
+  backdrop-filter: blur(4px);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+/* Body */
+.body {
+  padding: 1rem 1.1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dateLine {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.date {
+  color: var(--pink);
+}
+
+.sep {
+  color: rgba(250, 246, 238, 0.4);
+}
+
+.time {
+  color: rgba(250, 246, 238, 0.6);
+}
+
+.title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.description {
+  font-family: var(--serif);
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(250, 246, 238, 0.7);
+  margin: 0;
+  text-wrap: balance;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(237, 147, 177, 0.1);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.venue {
+  color: rgba(250, 246, 238, 0.45);
+}
+
+.teams {
+  color: var(--pink);
+}
