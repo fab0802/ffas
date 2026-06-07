@@ -1,5 +1,5 @@
 .section {
   padding: var(--section-py) var(--section-px);
-  max-width: 1280px;
+  max-width: var(--container-max);
   margin: 0 auto;
 }

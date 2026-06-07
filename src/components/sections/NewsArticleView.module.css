@@ -1,5 +1,5 @@
 .article {
-  max-width: 720px;
+  max-width: var(--container-max-reading);
   margin: 0 auto;
   padding: var(--section-py) var(--section-px);
 }

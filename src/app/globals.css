@@ -14,6 +14,11 @@
   --section-py-tight: clamp(3rem, 5vw, 5rem); /* ≈ 48–80px (Stats) */
   --section-px: clamp(1.375rem, 4vw, 2.5rem); /* ≈ 22–40px */
 
+  /* ─── Container-Breiten ─── */
+  --container-max: 1280px; /* Standard für Card-Grids */
+  --container-max-narrow: 1100px; /* Text-/Listen-Layouts */
+  --container-max-reading: 720px; /* Article-Detail (News) */
+
   /* ─── Fonts ─── */
   --serif: var(--font-fraunces), "Times New Roman", serif;
   --sans: var(--font-manrope), -apple-system, sans-serif;

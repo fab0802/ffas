@@ -27,11 +27,7 @@ export default async function Footer() {
               <br />
               <span className={styles.accent}>Albis</span> Süd
             </div>
-            <address className={styles.address}>
-              Postfach 47 · 8907 Wettswil am Albis
-              <br />
-              Sportplatz Erlenmoos · 8906 Bonstetten
-            </address>
+            <address className={styles.address}>info@ffas.ch</address>
           </div>
 
           {/* Gruppierung */}
@@ -41,13 +37,16 @@ export default async function Footer() {
             </h2>
             <ul className={styles.list}>
               <li>
-                <Link href="/ueber-uns">Über uns</Link>
+                <Link href="/ffas">FFAS</Link>
               </li>
               <li>
                 <Link href="/teams">Teams</Link>
               </li>
               <li>
-                <Link href="/trainerinnen">Trainerinnen</Link>
+                <Link href="/spielplan">Spielplan</Link>
+              </li>
+              <li>
+                <Link href="/events">Events</Link>
               </li>
               <li>
                 <Link href="/news">News</Link>
