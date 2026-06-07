@@ -25,8 +25,11 @@ export default async function NewsSection() {
       </div>
 
       <div className={styles.grid}>
-        {items.map((item) => (
-          <NewsCard key={item.slug} item={item} />
+        {items.map((item, idx) => (
+          <NewsCard
+            key={item.slug}
+            item={idx === 0 ? item : { ...item, featured: false }}
+          />
         ))}
       </div>
     </section>

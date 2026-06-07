@@ -1,4 +1,5 @@
 import type { NewsCategory } from "./newsCategory";
+import type { NewsImage } from "./newsImage";
 
 export type NewsItem = {
   slug: string;
@@ -7,4 +8,10 @@ export type NewsItem = {
   title: string;
   excerpt: string;
   featured?: boolean;
+  content?: string;
+  imageUrl?: string;
+  additionalImages?: NewsImage[];
+  authorSlug?: string;
+  authorText?: string;
+  teamSlugs?: string[];
 };
