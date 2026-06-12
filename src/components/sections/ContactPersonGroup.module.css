@@ -26,3 +26,7 @@
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 16px;
 }
+
+.section {
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
+}

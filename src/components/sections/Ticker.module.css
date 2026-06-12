@@ -21,17 +21,46 @@
 .item {
   display: flex;
   align-items: center;
-  gap: 3rem;
-  padding-right: 3rem;
   white-space: nowrap;
 }
 
-.text {
+/* Datum + Zeit: dezent, Mono — nicht mehr hervorgehoben */
+.date,
+.time {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  color: color-mix(in srgb, var(--cream) 55%, transparent);
+  margin-right: 0.9rem;
+}
+
+/* Matchup: Serif italic wie bisher */
+.matchup {
   font-family: var(--serif);
   font-style: italic;
   font-size: 1.6rem;
   letter-spacing: 0.01em;
-  color: inherit;
+}
+
+.emphasis {
+  color: var(--pink);
+}
+
+/* Gegner + Trenner: normal */
+.opponent,
+.vs {
+  color: var(--cream);
+}
+
+/* Separator mit gleichem Abstand links und rechts */
+.separator {
+  color: var(--pink);
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  line-height: 1;
+  transform: translateY(-0.1em);
+  opacity: 0.9;
+  margin-inline: 2rem;
 }
 
 .separator {

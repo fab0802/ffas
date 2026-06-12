@@ -38,6 +38,7 @@ export default async function KontaktPage() {
 
         {functionaries.length > 0 && (
           <ContactPersonGroup
+            id="leitungsteam"
             heading="Leitungsteam"
             persons={functionaries.map((f) => ({
               person: f,

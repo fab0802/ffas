@@ -5,6 +5,7 @@ import styles from "./ContactPersonGroup.module.css";
 export type ContactPersonGroupProps = {
   heading: string;
   subheading?: string;
+  id?: string;
   persons: Array<{
     person: Person;
     roleLabel: string;
@@ -14,12 +15,13 @@ export type ContactPersonGroupProps = {
 export default function ContactPersonGroup({
   heading,
   subheading,
+  id,
   persons,
 }: ContactPersonGroupProps) {
   if (persons.length === 0) return null;
 
   return (
-    <section className={styles.section}>
+    <section id={id} className={styles.section}>
       <header className={styles.header}>
         {subheading && <div className={styles.subheading}>{subheading}</div>}
         <h2 className={styles.heading}>{heading}</h2>

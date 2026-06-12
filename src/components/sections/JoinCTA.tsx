@@ -25,7 +25,7 @@ export default function JoinCTA() {
         </p>
 
         <div className={styles.actions}>
-          <Link href="/mitspielen" className={styles.primary}>
+          <Link href="/kontakt#leitungsteam" className={styles.primary}>
             Schnuppertraining buchen
           </Link>
           <Link href="/kontakt" className={styles.secondary}>
