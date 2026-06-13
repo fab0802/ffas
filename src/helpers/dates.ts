@@ -40,16 +40,6 @@ const MONTHS_SHORT = [
   "DEZ",
 ] as const;
 
-const WEEKDAYS_LONG = [
-  "Sonntag",
-  "Montag",
-  "Dienstag",
-  "Mittwoch",
-  "Donnerstag",
-  "Freitag",
-  "Samstag",
-] as const;
-
 /**
  * Formatiert ein einzelnes Datum oder einen Bereich für Listen-Zeilen.
  * "2026-06-21" → "21. JUN 2026"
@@ -129,7 +119,7 @@ export function formatDateWithWeekday(isoDate: string): string {
   if (!yyyy || !mm || !dd) return isoDate;
 
   // Date in lokaler Zeit, UTC vermeiden (sonst Tag-Verschiebung)
-  const date = new Date(yyyy, mm - 1, dd);
+  const date = parseIsoDate(isoDate);
   const weekday = WEEKDAYS_SHORT[date.getDay()];
 
   const ddStr = String(dd).padStart(2, "0");
@@ -143,8 +133,8 @@ export function formatDateWithWeekday(isoDate: string): string {
 export function formatDayHeader(isoDate: string): string {
   const [yyyy, mm, dd] = isoDate.split("-").map((n) => parseInt(n, 10));
   if (!yyyy || !mm || !dd) return isoDate;
-  const date = new Date(yyyy, mm - 1, dd);
-  const weekday = WEEKDAYS_LONG[date.getDay()];
+  const date = parseIsoDate(isoDate);
+  const weekday = WEEKDAYS[date.getDay()];
   const ddStr = String(dd).padStart(2, "0");
   const mmStr = String(mm).padStart(2, "0");
   return `${weekday}, ${ddStr}.${mmStr}.`;

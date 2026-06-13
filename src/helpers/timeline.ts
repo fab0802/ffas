@@ -1,29 +1,6 @@
-import { getUpcomingMatches } from "./matches";
-import { getUpcomingFfasEvents } from "./ffasEvents";
 import { getUpcomingMatchesForTeam } from "./matches";
 import { getFfasEventsForTeam } from "./ffasEvents";
 import type { TimelineItem } from "@/types/timelineItem";
-
-export async function getUpcomingTimeline(
-  count?: number,
-): Promise<TimelineItem[]> {
-  const [matches, events] = await Promise.all([
-    getUpcomingMatches(count ?? 999),
-    getUpcomingFfasEvents(),
-  ]);
-
-  const items: TimelineItem[] = [
-    ...matches.map(
-      (m): TimelineItem => ({ kind: "match", data: m, date: m.date }),
-    ),
-    ...events.map(
-      (e): TimelineItem => ({ kind: "event", data: e, date: e.date }),
-    ),
-  ];
-
-  items.sort((a, b) => a.date.localeCompare(b.date));
-  return count ? items.slice(0, count) : items;
-}
 
 /**
  * Kombinierte chronologische Timeline für ein Team:

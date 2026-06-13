@@ -18,15 +18,3 @@ export function getAllFunctionaries(): Array<
     })
     .filter((p): p is Person & { role: FunctionaryRole } => p !== null);
 }
-
-/**
- * Liefert die Funktionärsrollen einer Person (kann mehrere sein,
- * z.B. wenn jemand Präsidentin und Sponsoring-Verantwortliche ist).
- */
-export function getFunctionaryRolesForPerson(
-  personSlug: string,
-): FunctionaryRole[] {
-  return functionaryAssignments
-    .filter((a) => a.personSlug === personSlug)
-    .map((a) => a.role);
-}

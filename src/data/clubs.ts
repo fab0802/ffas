@@ -38,7 +38,3 @@ export const clubs: Club[] = [
     logo: "/images/clubs/fc-wettswil-bonstetten.png",
   },
 ];
-
-export async function getClubs(): Promise<Club[]> {
-  return clubs;
-}

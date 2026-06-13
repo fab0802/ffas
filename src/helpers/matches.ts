@@ -27,15 +27,6 @@ export function getMatchVenueName(match: Match): string | undefined {
   return match.venueText;
 }
 
-/** Soonest match from today onward, or undefined wenn keine zukünftigen. */
-export async function getNextMatch(): Promise<Match | undefined> {
-  const matches = await getMatches();
-  const today = new Date().toISOString().slice(0, 10);
-  return matches
-    .filter((m) => m.date >= today)
-    .sort((a, b) => a.date.localeCompare(b.date))[0];
-}
-
 export async function getUpcomingMatches(
   count: number,
   excludeDate?: string,
@@ -106,7 +97,7 @@ export async function getFeaturedMatch(): Promise<Match | undefined> {
   const today = new Date().toISOString().slice(0, 10);
   const upcoming = matches
     .filter((m) => m.date >= today)
-    .filter((M) => M.status !== "Nullwertung")
+    .filter((m) => m.status !== "Nullwertung")
     .sort((a, b) => {
       if (a.date !== b.date) return a.date.localeCompare(b.date);
       return (a.time ?? "").localeCompare(b.time ?? "");

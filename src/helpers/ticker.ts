@@ -2,7 +2,6 @@ import type { Match } from "@/types/match";
 import {
   getTeamForMatch,
   getMatchesInNextDays,
-  getMatchTeamDisplayName,
   formatDateWithWeekday,
 } from "@/helpers";
 

@@ -1,4 +1,5 @@
 import type { Stat } from "@/types/stat";
+import { getTeamsCount } from "@/helpers";
 
 export const stats: Stat[] = [
   {
@@ -10,7 +11,7 @@ export const stats: Stat[] = [
   },
   {
     slug: "teams",
-    value: 7,
+    value: getTeamsCount(),
     label: "Teams",
     sublabel: "von U10 bis Aktive",
   },

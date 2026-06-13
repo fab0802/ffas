@@ -1,9 +1,6 @@
 import { persons } from "@/data/persons";
-import { teams } from "@/data/teams";
 import { trainerAssignments } from "@/data/trainerAssignments";
-
 import type { Person } from "@/types/person";
-import type { Team } from "@/types/team";
 import type { TrainerRole } from "@/types/trainerRole";
 
 /**
@@ -21,21 +18,4 @@ export function getTrainersForTeam(
       return { ...trainer, role: a.role };
     })
     .filter((t): t is Person & { role: TrainerRole } => t !== null);
-}
-
-/**
- * Liefert alle Teams, in denen ein Trainer eingetragen ist,
- * angereichert mit der Rolle pro Team.
- */
-export function getTeamsForTrainer(
-  trainerSlug: string,
-): Array<Team & { role: TrainerRole }> {
-  return trainerAssignments
-    .filter((a) => a.personSlug === trainerSlug)
-    .map((a) => {
-      const team = teams.find((t) => t.slug === a.teamSlug);
-      if (!team) return null;
-      return { ...team, role: a.role };
-    })
-    .filter((t): t is Team & { role: TrainerRole } => t !== null);
 }

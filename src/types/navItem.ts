@@ -1,4 +1,6 @@
 export type NavItem = {
-  label: string;
   href: string;
+  label: string;
+  visibleInNav: boolean;
+  visibleInFooter: boolean;
 };
