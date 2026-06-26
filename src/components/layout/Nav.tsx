@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import NavLinks from "./NavLinks";
+import MobileNav from "./MobileNav";
 import styles from "./Nav.module.css";
 
 export default function Nav() {
@@ -16,6 +17,7 @@ export default function Nav() {
         />
       </Link>
       <NavLinks />
+      <MobileNav />
     </nav>
   );
 }

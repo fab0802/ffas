@@ -1,6 +1,6 @@
 /* src/components/layout/Nav.module.css */
 
-/* ─── Container: fixed oben, mit Blur beim Scrollen ──────────────────── */
+/* ─── Container: fixed oben, mit Blur beim Scrollen ───────────────────── */
 .nav {
   position: fixed;
   top: 0;
@@ -43,7 +43,7 @@
   border: 1px solid var(--pink);
 }
 
-/* ─── Link-Liste rechts ──────────────────────────────────────────────── */
+/* ─── Link-Liste rechts (Desktop) ────────────────────────────────────── */
 .links {
   list-style: none;
   padding: 0;
@@ -68,7 +68,7 @@
   color: var(--pink);
 }
 
-/* ─── Aktiver Link (für später, wenn du usePathname() nutzt) ─────────── */
+/* ─── Aktiver Link ───────────────────────────────────────────────────── */
 .links a[aria-current="page"] {
   color: var(--pink);
 }
@@ -83,22 +83,13 @@
   background: var(--pink);
 }
 
-/* ─── Mobile ─────────────────────────────────────────────────────────── */
+/* ─── Mobile: Desktop-Links ausblenden, MobileNav uebernimmt ──────────── */
 @media (max-width: 880px) {
   .nav {
     padding: 18px 22px;
   }
 
-  .logo {
-    font-size: 22px;
-  }
-
   .links {
-    gap: 20px;
-  }
-
-  .links a {
-    font-size: 10px;
-    letter-spacing: 0.18em;
+    display: none;
   }
 }
