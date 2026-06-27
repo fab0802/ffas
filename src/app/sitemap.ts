@@ -13,6 +13,7 @@ const STATIC_PATHS = [
   "/kontakt",
   "/impressum",
   "/datenschutz",
+  "/colophon",
 ] as const;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
