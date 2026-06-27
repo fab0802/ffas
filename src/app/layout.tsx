@@ -84,9 +84,14 @@ export default function RootLayout({
       className={`${fraunces.variable} ${manrope.variable} ${jetbrains.variable}`}
     >
       <body>
+        <a href="#main" className="skip-link">
+          Zum Inhalt springen
+        </a>
         <ScrollToTop />
         <Nav />
-        {children}
+        <main id="main" tabIndex={-1}>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
