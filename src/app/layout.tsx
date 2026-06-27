@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { site } from "@/data/site";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/layout/ScrollToTop";
@@ -27,8 +28,25 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FFAS — Frauenfussball Albis Süd",
-  description: "Der Frauenfussball im Säuliamt. Fünf Vereine, eine Farbe.",
+  metadataBase: new URL(site.url),
+  title: {
+    default: site.name,
+    template: "%s",
+  },
+  description: site.description,
+  openGraph: {
+    type: "website",
+    locale: site.locale,
+    url: site.url,
+    siteName: site.shortName,
+    title: site.name,
+    description: site.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.name,
+    description: site.description,
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
