@@ -20,9 +20,11 @@ export default function DatenschutzPage() {
         <h2>1. Verantwortliche Stelle</h2>
         <p>Fabian Gretsch</p>
         <p>
-          Diese Website ist ein privates, nicht-kommerzielles Demo-Projekt und
-          steht in keinem Zusammenhang mit «Frauenfussball Albis Süd» oder den
-          dargestellten Vereinen.
+          «Frauenfussball Albis Süd» ist eine reale Kooperation von fünf
+          Vereinen im Säuliamt. Diese Website ist eine eigenständige, nicht
+          offizielle Umsetzung im Rahmen eines privaten, nicht-kommerziellen
+          Portfolio-Projekts und wurde weder von der Kooperation noch von den
+          beteiligten Vereinen in Auftrag gegeben.
         </p>
 
         <h2>2. Grundsatz</h2>

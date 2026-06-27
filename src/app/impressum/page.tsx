@@ -15,19 +15,27 @@ export default function ImpressumPage() {
         <h2>Verantwortlich für diese Website</h2>
         <p>Fabian Gretsch</p>
         <p>
-          Diese Website ist ein privates, nicht-kommerzielles Demo- und
-          Portfolio-Projekt. «Frauenfussball Albis Süd» sowie die fünf
-          dargestellten Vereine sind weder Betreiber noch Auftraggeber dieser
-          Website und stehen in keinem Zusammenhang mit ihr. Sämtliche Inhalte
-          dienen ausschliesslich der Demonstration.
+          «Frauenfussball Albis Süd» ist eine reale Kooperation von fünf
+          Vereinen im Säuliamt. Diese Website ist jedoch eine eigenständige,
+          nicht offizielle Umsetzung im Rahmen eines privaten,
+          nicht-kommerziellen Portfolio-Projekts. Sie wurde weder von der
+          Kooperation noch von den beteiligten Vereinen in Auftrag gegeben oder
+          betrieben. Der offizielle Auftritt findet sich unter{" "}
+          <a
+            href="https://ff-albissued.ch"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ff-albissued.ch
+          </a>
+          .
         </p>
 
         <h2>Haftung für Inhalte</h2>
         <p>
-          Die Inhalte dieser Website wurden im Rahmen eines Demo-Projekts mit
-          fiktiven beziehungsweise beispielhaften Angaben erstellt. Für die
-          Richtigkeit, Vollständigkeit und Aktualität wird keine Gewähr
-          übernommen.
+          Die Inhalte dieser Website wurden im Rahmen eines Demo-Projekts zu
+          Demonstrationszwecken erstellt. Für die Richtigkeit, Vollständigkeit
+          und Aktualität wird keine Gewähr übernommen.
         </p>
 
         <h2>Haftung für externe Links</h2>
