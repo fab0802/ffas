@@ -11,7 +11,7 @@ import NextEventsSection from "@/components/sections/NextEventsSection";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Hero />
       <Ticker />
       <StatsSection />
@@ -22,6 +22,6 @@ export default function Home() {
       <NextEventsSection />
       <NewsSection />
       <JoinCTA />
-    </main>
+    </>
   );
 }
