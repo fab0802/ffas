@@ -1,5 +1,6 @@
 import { getNews, getFeaturedNews, getNewsExcluding } from "@/helpers";
 import PageHeader from "@/components/layout/PageHeader";
+import Reveal from "@/components/ui/Reveal";
 import NewsCard from "@/components/cards/NewsCard";
 import styles from "./news.module.css";
 
@@ -28,17 +29,21 @@ export default async function NewsPage() {
 
       <section className={styles.section}>
         {featured && (
-          <div className={styles.featuredWrapper}>
-            <NewsCard item={featured} />
-          </div>
+          <Reveal>
+            <div className={styles.featuredWrapper}>
+              <NewsCard item={featured} />
+            </div>
+          </Reveal>
         )}
 
         {rest.length > 0 && (
-          <div className={styles.grid}>
-            {rest.map((item) => (
-              <NewsCard key={item.slug} item={{ ...item, featured: false }} />
-            ))}
-          </div>
+          <Reveal>
+            <div className={styles.grid}>
+              {rest.map((item) => (
+                <NewsCard key={item.slug} item={{ ...item, featured: false }} />
+              ))}
+            </div>
+          </Reveal>
         )}
 
         {!featured && rest.length === 0 && (

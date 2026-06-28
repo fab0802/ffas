@@ -9,15 +9,13 @@
   height: 2.75rem;
   padding: 0;
   background: transparent;
-  border: 1px dotted var(--pink);
-  border-radius: 50%;
+  border: none;
   color: var(--cream);
   cursor: pointer;
-  transition: border-color 0.3s, color 0.3s;
+  transition: color 0.3s;
 }
 
 .toggle:hover {
-  border-style: solid;
   color: var(--pink);
 }
 

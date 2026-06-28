@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import PageHeader from "@/components/layout/PageHeader";
+import Reveal from "@/components/ui/Reveal";
 import { getTeams } from "@/helpers";
 import styles from "./page.module.css";
 
@@ -57,13 +58,27 @@ export default async function TeamDetailPage({
       />
 
       <div className={styles.page}>
-        <TeamPhotoBlock team={team} />
-        <TeamTrainingsBlock team={team} />
-        <TeamTrainersBlock team={team} />
-        <TeamUpcomingBlock team={team} />
-        <TeamResultsBlock team={team} />
-        <TeamSponsorsBlock team={team} />
-        <TeamNavigationBlock currentSlug={team.slug} />
+        <Reveal>
+          <TeamPhotoBlock team={team} />
+        </Reveal>
+        <Reveal>
+          <TeamTrainingsBlock team={team} />
+        </Reveal>
+        <Reveal>
+          <TeamTrainersBlock team={team} />
+        </Reveal>
+        <Reveal>
+          <TeamUpcomingBlock team={team} />
+        </Reveal>
+        <Reveal>
+          <TeamResultsBlock team={team} />
+        </Reveal>
+        <Reveal>
+          <TeamSponsorsBlock team={team} />
+        </Reveal>
+        <Reveal>
+          <TeamNavigationBlock currentSlug={team.slug} />
+        </Reveal>
       </div>
     </>
   );

@@ -1,0 +1,23 @@
+/* src/components/ui/Reveal.module.css */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Reduced Motion: Inhalt sofort sichtbar, keine Bewegung — und unabhängig
+   davon, ob der Observer bereits ausgelöst hat (kein verstecktes Element). */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

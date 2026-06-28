@@ -1,6 +1,7 @@
 import { getAllUpcomingMatches } from "@/helpers";
 import { teams } from "@/data/teams";
 import PageHeader from "@/components/layout/PageHeader";
+import Reveal from "@/components/ui/Reveal";
 import SpielplanClient from "./_blocks/SpielplanClient";
 
 export const metadata = {
@@ -26,7 +27,9 @@ export default async function SpielplanPage() {
           </>
         }
       />
-      <SpielplanClient matches={matches} teams={teamsWithMatches} />
+      <Reveal>
+        <SpielplanClient matches={matches} teams={teamsWithMatches} />
+      </Reveal>
     </>
   );
 }

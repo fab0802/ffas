@@ -1,6 +1,7 @@
 import { getUpcomingFfasEvents } from "@/helpers";
 import { teams } from "@/data/teams";
 import PageHeader from "@/components/layout/PageHeader";
+import Reveal from "@/components/ui/Reveal";
 import EventsClient from "./_blocks/EventsClient";
 
 export const metadata = {
@@ -35,11 +36,13 @@ export default async function EventsPage() {
           </>
         }
       />
-      <EventsClient
-        events={events}
-        categories={categoriesWithEvents}
-        teams={teamsWithEvents}
-      />
+      <Reveal>
+        <EventsClient
+          events={events}
+          categories={categoriesWithEvents}
+          teams={teamsWithEvents}
+        />
+      </Reveal>
     </>
   );
 }

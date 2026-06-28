@@ -5,6 +5,7 @@ import type { NewsItem } from "@/types/newsItem";
 import { formatDateLongUpper, getNewsAuthorDisplay } from "@/helpers";
 import styles from "./NewsArticleView.module.css";
 import NewsGallery from "@/components/news/NewsGallery";
+import Reveal from "@/components/ui/Reveal";
 
 export type NewsArticleViewProps = {
   item: NewsItem;
@@ -49,13 +50,17 @@ export default function NewsArticleView({ item }: NewsArticleViewProps) {
       )}
 
       {item.content && (
-        <div className={styles.content}>
-          <ReactMarkdown>{item.content}</ReactMarkdown>
-        </div>
+        <Reveal>
+          <div className={styles.content}>
+            <ReactMarkdown>{item.content}</ReactMarkdown>
+          </div>
+        </Reveal>
       )}
 
       {item.additionalImages && item.additionalImages.length > 0 && (
-        <NewsGallery images={item.additionalImages} />
+        <Reveal>
+          <NewsGallery images={item.additionalImages} />
+        </Reveal>
       )}
     </article>
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/layout/PageHeader";
+import Reveal from "@/components/ui/Reveal";
 import TeamPhotoCard from "@/components/cards/TeamPhotoCard";
 import { getTeams, getTeamsCountWord } from "@/helpers";
 import styles from "./page.module.css";
@@ -29,23 +30,27 @@ export default function TeamsPage() {
 
       <div className={styles.page}>
         {aktive.length > 0 && (
-          <section className={styles.aktiveSection}>
-            <div className={styles.aktiveGrid}>
-              {aktive.map((team) => (
-                <TeamPhotoCard key={team.slug} team={team} />
-              ))}
-            </div>
-          </section>
+          <Reveal>
+            <section className={styles.aktiveSection}>
+              <div className={styles.aktiveGrid}>
+                {aktive.map((team) => (
+                  <TeamPhotoCard key={team.slug} team={team} />
+                ))}
+              </div>
+            </section>
+          </Reveal>
         )}
 
         {juniorinnen.length > 0 && (
-          <section className={styles.juniorinnenSection}>
-            <div className={styles.juniorinnenGrid}>
-              {juniorinnen.map((team) => (
-                <TeamPhotoCard key={team.slug} team={team} />
-              ))}
-            </div>
-          </section>
+          <Reveal>
+            <section className={styles.juniorinnenSection}>
+              <div className={styles.juniorinnenGrid}>
+                {juniorinnen.map((team) => (
+                  <TeamPhotoCard key={team.slug} team={team} />
+                ))}
+              </div>
+            </section>
+          </Reveal>
         )}
       </div>
     </>

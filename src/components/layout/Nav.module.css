@@ -23,24 +23,14 @@
 
 /* ─── Brand / Logo links ─────────────────────────────────────────────── */
 .logo {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 300;
-  font-size: 28px;
-  letter-spacing: -0.02em;
-  color: var(--cream);
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  transition: color 0.3s;
-  border: 1px dotted var(--pink);
-  border-radius: 50%;
-  width: 3.4rem;
-  height: 3.4rem;
-  display: grid;
-  place-items: center;
+  transition: filter 0.3s;
 }
 
 .logo:hover {
-  border: 1px solid var(--pink);
+  filter: drop-shadow(0 0 10px var(--pink));
 }
 
 /* ─── Brand-Gruppe: Logo + Demo-Badge ────────────────────────────────── */

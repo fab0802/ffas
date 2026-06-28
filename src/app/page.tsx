@@ -1,3 +1,4 @@
+import Reveal from "@/components/ui/Reveal";
 import SponsorsSection from "@/components/sections/SponsorsSection";
 import StatsSection from "@/components/sections/StatsSection";
 import Ticker from "@/components/sections/Ticker";
@@ -13,15 +14,33 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Ticker />
-      <StatsSection />
-      <SponsorsSection />
-      <Manifesto />
-      <TeamsSection />
-      <NextMatchSection />
-      <NextEventsSection />
-      <NewsSection />
-      <JoinCTA />
+      <Reveal>
+        <Ticker />
+      </Reveal>
+      <Reveal>
+        <StatsSection />
+      </Reveal>
+      <Reveal>
+        <SponsorsSection />
+      </Reveal>
+      <Reveal>
+        <Manifesto />
+      </Reveal>
+      <Reveal>
+        <TeamsSection />
+      </Reveal>
+      <Reveal>
+        <NextMatchSection />
+      </Reveal>
+      <Reveal>
+        <NextEventsSection />
+      </Reveal>
+      <Reveal>
+        <NewsSection />
+      </Reveal>
+      <Reveal>
+        <JoinCTA />
+      </Reveal>
     </>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/layout/PageHeader";
+import Reveal from "@/components/ui/Reveal";
 import AnchorNav from "./_blocks/AnchorNav";
 import ManifestBlock from "./_blocks/ManifestBlock";
 import TraegervereineBlock from "./_blocks/TraegervereineBlock";
@@ -38,11 +39,21 @@ export default function FfasPage() {
       <AnchorNav anchors={anchors} />
 
       <div className={styles.page}>
-        <ManifestBlock />
-        <TraegervereineBlock />
-        <LeitungBlock />
-        <GeschichteBlock />
-        <StatutenBlock />
+        <Reveal>
+          <ManifestBlock />
+        </Reveal>
+        <Reveal>
+          <TraegervereineBlock />
+        </Reveal>
+        <Reveal>
+          <LeitungBlock />
+        </Reveal>
+        <Reveal>
+          <GeschichteBlock />
+        </Reveal>
+        <Reveal>
+          <StatutenBlock />
+        </Reveal>
       </div>
     </>
   );

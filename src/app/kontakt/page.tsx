@@ -1,5 +1,6 @@
 import { getAllFunctionaries, getTrainersForTeam, getTeams } from "@/helpers";
 import PageHeader from "@/components/layout/PageHeader";
+import Reveal from "@/components/ui/Reveal";
 import ContactGeneralBlock from "@/components/sections/ContactGeneralBlock";
 import ContactPersonGroup from "@/components/sections/ContactPersonGroup";
 import styles from "./kontakt.module.css";
@@ -34,29 +35,34 @@ export default async function KontaktPage() {
       />
 
       <div className={styles.sections}>
-        <ContactGeneralBlock />
+        <Reveal>
+          <ContactGeneralBlock />
+        </Reveal>
 
         {functionaries.length > 0 && (
-          <ContactPersonGroup
-            id="leitungsteam"
-            heading="Leitungsteam"
-            persons={functionaries.map((f) => ({
-              person: f,
-              roleLabel: f.role,
-            }))}
-          />
+          <Reveal>
+            <ContactPersonGroup
+              id="leitungsteam"
+              heading="Leitungsteam"
+              persons={functionaries.map((f) => ({
+                person: f,
+                roleLabel: f.role,
+              }))}
+            />
+          </Reveal>
         )}
 
         {teamsWithTrainers.map(({ team, trainers }) => (
-          <ContactPersonGroup
-            key={team.slug}
-            heading={team.name + " " + team.emphasis}
-            subheading="Trainerteam"
-            persons={trainers.map((t) => ({
-              person: t,
-              roleLabel: t.role,
-            }))}
-          />
+          <Reveal key={team.slug}>
+            <ContactPersonGroup
+              heading={team.name + " " + team.emphasis}
+              subheading="Trainerteam"
+              persons={trainers.map((t) => ({
+                person: t,
+                roleLabel: t.role,
+              }))}
+            />
+          </Reveal>
         ))}
       </div>
     </>
