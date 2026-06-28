@@ -1,0 +1,18 @@
+# Netlify-Konfiguration für das FFAS-Projekt (Next.js 16, App Router)
+#
+# Hinweis: Der Next.js-Runtime-Adapter wird von Netlify automatisch erkannt
+# und installiert — er muss hier NICHT als Plugin eingetragen werden. Bewusst
+# nicht gepinnt, damit er automatische Updates erhält.
+
+[build]
+  command = "npm run build"
+
+[build.environment]
+  # Next 16 benötigt Node 20+
+  NODE_VERSION = "20"
+
+  # Basis-URL für Metadaten, Sitemap und OG-Bild.
+  # Auf die echte Netlify-Domain setzen und neu deployen — oder stattdessen
+  # unter Site settings -> Environment variables pflegen (dann diese Zeile
+  # auskommentiert lassen).
+  # NEXT_PUBLIC_SITE_URL = "https://ffas-demo.netlify.app"

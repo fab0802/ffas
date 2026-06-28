@@ -74,7 +74,15 @@ export default function ColophonPage() {
         </p>
 
         <h2>Quellcode</h2>
-        <p>[Platzhalter: Link zu Repository oder Portfolio]</p>
+        <p>
+          <a
+            href="https://github.com/fab0802/ffas"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            https://github.com/fab0802/ffas
+          </a>
+        </p>
       </LegalContent>
     </>
   );
