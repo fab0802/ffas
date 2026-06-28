@@ -7,11 +7,15 @@ export default function ScrollToTop() {
   const pathname = usePathname();
 
   useEffect(() => {
-    // Wenn ein Anker-Hash in der URL steht (z.B. /kontakt#leitungsteam),
-    // NICHT nach oben scrollen — sonst wird der Anker-Sprung überschrieben.
+    // Bei einem Anker-Hash (z.B. /spielplan#tabelle) NICHT nach oben springen,
+    // sonst wird der Anker-Sprung überschrieben.
     if (window.location.hash) return;
-    const behavior = window.scrollY > 100 ? "smooth" : "instant";
-    window.scrollTo({ top: 0, behavior });
+
+    // Bewusst "instant": ein animiertes (smooth) Scrollen kollidiert beim
+    // Seitenwechsel mit der Höhenänderung des Dokuments — auf kürzeren Seiten
+    // bliebe der Browser sonst am unteren Rand kleben. "instant" überschreibt
+    // hier zugleich das globale scroll-behavior: smooth für diesen Sprung.
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, [pathname]);
 
   return null;
