@@ -64,7 +64,7 @@
 /* ═══ INHALTS-SPALTEN ═══ */
 .columns {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   gap: 48px;
   padding-bottom: 40px;
 }
@@ -141,6 +141,18 @@
   object-fit: contain;
 }
 
+/* ═══ DEKORATIVES BRAND-WAPPEN ═══ */
+.brandMark {
+  justify-self: end;
+  align-self: center;
+}
+
+.brandMarkLogo {
+  width: 210px;
+  height: auto;
+  opacity: 0.5;
+}
+
 /* ═══ BOTTOM-BAR ═══ */
 .bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -182,6 +194,10 @@
     grid-template-columns: 1fr;
     gap: 40px;
     padding-bottom: 32px;
+  }
+
+  .brandMark {
+    display: none;
   }
 
   .bottom {

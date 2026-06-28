@@ -98,6 +98,16 @@ export default async function Footer() {
               })}
             </ul>
           </nav>
+
+          <div className={styles.brandMark} aria-hidden="true">
+            <Image
+              src="/ffas-logo.svg"
+              alt=""
+              width={210}
+              height={210}
+              className={styles.brandMarkLogo}
+            />
+          </div>
         </div>
 
         {/* ═══ BOTTOM-BAR ═══ */}
